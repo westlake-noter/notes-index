@@ -1,0 +1,6 @@
+# Default organization CODEOWNERS baseline.
+#
+# This conservative first baseline routes ownership review to the current
+# visible organization administrator. Move to team-based ownership after
+# organization team data is readable and reviewed.
+* @JieteXue
