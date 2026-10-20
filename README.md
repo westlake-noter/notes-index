@@ -21,17 +21,18 @@ An index of the organization's existing course notes. See each repository's READ
 - 学科标签：按实际内容设置；当前四个仓库均使用 `math`。
 - 格式标签：提供 LaTeX 源码的仓库必须设置 `latex`。
 - 课程标签：至少设置一个能明确识别课程的标签，当前约定如下。
+- 常用缩写：有明确、常用的课程缩写时，作为补充标签添加，如 ODE 使用 `ode`、FAA 使用 `faa`；保留完整课程标签，不强行为每门课创建缩写。
 
 | 笔记仓库 / Repository | 课程标签 / Course Topics |
 | :--- | :--- |
 | FAA-lecture-notes | `fundamental-algebra-and-analysis`、`faa` |
-| Ordinary-Differential-Equations | `ordinary-differential-equations` |
+| Ordinary-Differential-Equations | `ordinary-differential-equations`、`ode` |
 | Measure-Theory-and-Real-Analysis | `measure-theory`、`real-analysis` |
 | Probability-Theory | `probability-theory` |
 
-新增仓库时，在仓库首页 **About** 的设置中添加 Topics，使用小写英文和连字符，并同步更新本索引。保留已有且相关的标签，避免重复添加含义相同的标签。
+新增仓库时，在仓库首页 **About** 的设置中添加 Topics，使用小写英文和连字符，并同步更新本索引。保留已有且相关的标签；完整名称与常用缩写可以并存，除此之外避免添加含义重复的标签。
 
-Every course notes repository must have GitHub Topics: `notes`, a subject topic (`math` for the current repositories), and at least one course topic listed above. Repositories containing LaTeX sources must also use `latex`. These are repository Topics, not issue labels. Set them in the repository's About settings and update this index when adding a course.
+Every course notes repository must have GitHub Topics: `notes`, a subject topic (`math` for the current repositories), and at least one course topic listed above. Repositories containing LaTeX sources must also use `latex`. Add established course abbreviations in lowercase, such as `ode` and `faa`, alongside the full course topics; do not invent abbreviations for every course. These are repository Topics, not issue labels. Set them in the repository's About settings and update this index when adding a course.
 
 ## 阅读与勘误 / Reading & Corrections
 
