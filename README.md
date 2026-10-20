@@ -1,51 +1,22 @@
-# 📚 笔记贡献组织 · 仓库索引 / Notes Contribution Organization · Repository Index
+# Westlake Noter 课程笔记索引 / Course Notes Index
 
-欢迎来到笔记贡献组织的索引仓库。这里记录了组织内所有仓库的位置、用途和分类，是新成员了解项目全貌的起点。
+这里仅整理组织内已有的课程笔记，具体内容与编译方式见各仓库 README。
 
-Welcome to the index repository of the Notes Contribution Organization. This repository documents the locations, purposes, and classifications of all repositories within the organization, serving as the starting point for new members to understand the overall project landscape.
+An index of the organization's existing course notes. See each repository's README for details and build instructions.
 
----
+## 课程笔记 / Course Notes
 
-## 🗂️ 仓库分类 / Repository Classification
-
-### 📖 笔记类 / Notes
-
-| 仓库名称 / Repository Name | 描述 / Description | 主要语言 / Primary Language |
+| 课程 / Course | 笔记仓库 / Repository | 内容与维护情况 / Contents & Maintenance |
 | :--- | :--- | :--- |
-| 待补充 | 待补充 | 待补充 |
+| 代数与分析基础 / Fundamental Algebra and Analysis | [FAA-lecture-notes](https://github.com/westlake-noter/FAA-lecture-notes) | 第一、二部分 LaTeX 讲义源码归档，后续以勘误和小范围修正为主。/ Parts I & II source archive; occasional corrections. |
+| 常微分方程 / Ordinary Differential Equations | [Ordinary-Differential-Equations](https://github.com/westlake-noter/Ordinary-Differential-Equations) | 按章节整理的 LaTeX 课程笔记，随新增章节与勘误更新。/ Chapter-based LaTeX notes; updated with new chapters and corrections. |
+| 测度论与实分析 / Measure Theory and Real Analysis | [Measure-Theory-and-Real-Analysis](https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis) | 按章节整理的 LaTeX 课程笔记，随新增章节与勘误更新。/ Chapter-based LaTeX notes; updated with new chapters and corrections. |
+| 概率论 / Probability Theory | [Probability-Theory](https://github.com/westlake-noter/Probability-Theory) | 按章节整理的 LaTeX 课程笔记，随新增笔记与勘误更新。/ Chapter-based LaTeX notes; updated with new notes and corrections. |
 
-### 🛠️ 工具与自动化 / Tools & Automation
+## 阅读与勘误 / Reading & Corrections
 
-| 仓库名称 / Repository Name | 描述 / Description | 主要语言 / Primary Language |
-| :--- | :--- | :--- |
-| 待补充 | 待补充 | 待补充 |
+- 各仓库提供 LaTeX 源码；PDF 的获取方式以各仓库说明为准。代数与分析基础的 PDF 包请查看其 [Releases](https://github.com/westlake-noter/FAA-lecture-notes/releases)。
+- 内容问题请在对应笔记仓库提交 Issue，或通过 Pull Request 提交勘误。
+- 新增课程笔记仓库时，在上表补充课程名称、仓库链接和简短说明即可。
 
-### 🌐 Web 应用 / Web Applications
-
-| 仓库名称 / Repository Name | 描述 / Description | 主要语言 / Primary Language |
-| :--- | :--- | :--- |
-| 待补充 | 待补充 | 待补充 |
-
----
-
-## 🧭 快速导航 / Quick Navigation
-
-| 用途 / Purpose | 跳转 / Link |
-| :--- | :--- |
-| 申请加入组织 / Apply to join the organization | [membership-application](https://github.com/你的组织/membership-application) |
-| 提交笔记 / Submit notes | 待补充 |
-| 报告问题 / Report issues | [Issues](https://github.com/你的组织/notes-index/issues) |
-| 查看组织所有仓库 / View all organization repositories | [组织仓库列表](https://github.com/orgs/你的组织/repositories) |
-
----
-
-## 📌 如何更新此索引 / How to Update This Index
-
-1. 当组织内新增或调整仓库时，请同步更新本 README 中的表格。
-   When a new repository is added or an existing one is modified, please update the tables in this README accordingly.
-
-2. 新增仓库建议使用统一的 Topics（如 `notes`、`tool`、`web`）便于后续自动归类。
-   It is recommended to use consistent Topics (e.g., `notes`, `tool`, `web`) for new repositories to facilitate automated classification.
-
-3. 如有疑问，请在本仓库提交 Issue。
-   If you have any questions, please submit an Issue in this repository.
+Repositories provide LaTeX sources; consult their READMEs for PDF availability. For Fundamental Algebra and Analysis PDF bundles, check its Releases page. Report errors or submit corrections in the relevant notes repository. Add new course notes to the table with a course name, repository link, and brief description.
