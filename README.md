@@ -13,6 +13,9 @@ An index of the organization's existing course notes. See each repository's READ
 | 测度论与实分析 / Measure Theory and Real Analysis | [Measure-Theory-and-Real-Analysis](https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis) | 按章节整理的 LaTeX 课程笔记，随新增章节与勘误更新。/ Chapter-based LaTeX notes; updated with new chapters and corrections. |
 | 概率论 / Probability Theory | [Probability-Theory](https://github.com/westlake-noter/Probability-Theory) | 按章节整理的 LaTeX 课程笔记，随新增笔记与勘误更新。/ Chapter-based LaTeX notes; updated with new notes and corrections. |
 | 普通化学 / General Chemistry | [General Chemistry](https://github.com/JiamingShi-JsPhys/chem-notes) | 第一到三章（化学热力学、氧化还原反应与电化学、化学动力学）完成。/ Chapters 1–3 (thermodynamics, electrochemistry, kinetics) are complete. |
+| 微积分 / Calculus | [Calculus-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Calculus-notes) | **2025fall–2026spring**：微积分 A 类（上、下）LaTeX 讲义，附 PDF。/ Track A single-variable and multivariable calculus notes; LaTeX sources and PDF available. |
+| 线性代数 / Linear Algebra | [Linear-Algebra-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Linear-Algebra-notes) | **2025fall–2026spring**：线性代数 A 类（上、下） LaTeX 讲义，附 PDF。/ Track A LaTeX lecture notes, with PDF. |
+| 偏微分方程 / Partial Differential Equations | [PDE-lecture-notes-2026fall](https://github.com/qwerasdasd1/PDE-notes) | **2026fall**：提供 LaTeX 源码与 PDF，持续整理中。/ LaTeX sources and PDF available; work in progress. |
 
 ## 阅读入口 / Reading
 
