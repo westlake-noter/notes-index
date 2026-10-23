@@ -29,8 +29,9 @@ The site currently uses English for all interface text and course summaries,
 with GitHub-inspired light and dark styles in `src/css/custom.css`.
 The color mode follows the system on first visit. The toggle switches only
 between light and dark, and remembers the manual preference.
-The top navigation separates Course Notes and Tools. `docs/tools.md` is the
-Tools placeholder; future tool pages belong in `toolsSidebar` in `sidebars.js`.
+The top navigation separates Course Notes and Tools. Both sidebars are generated
+from their respective directories; adding a Markdown page does not require
+editing `sidebars.js`. `docs/tools/index.md` is the Tools placeholder.
 
 站点地址：<https://westlake-noter.github.io/notes-index/>。
 
@@ -50,13 +51,42 @@ npm run serve
 
 ### 内容维护
 
-- `docs/notes.md`：站点首页与学科入口。
-- `docs/notes/math.md`、`docs/notes/chemistry.md`：学科目录。
+- `docs/notes/index.md`：站点首页与学科入口。
+- `docs/notes/<学科>/index.md`：学科介绍页，自动作为该分类的入口。
+- `docs/notes/<学科>/_category_.json`：分类名称与顺序。
 - `docs/notes/<学科>/<仓库>.md`：每个课程仓库独立的介绍页面。
-- `sidebars.js`：侧边栏的学科分类和课程顺序。
+- `docs/tools/index.md`：Tools 入口；后续工具页面放入 `docs/tools/`。
+- `sidebars.js`：仅指定 Notes 和 Tools 的自动扫描目录，无需逐篇登记。
 
-添加课程时，在对应学科目录新建 `.md`，写明课程名称、仓库链接、
-资料范围和 PDF 获取方式，同时更新学科目录、首页计数、侧边栏及本 README。
+添加课程或工具时，只需在对应目录新建 `.md`，侧边栏会自动收录。
+页面标题和可选的排序序号放在 frontmatter 中，例如：
+
+```md
+---
+title: New Course
+sidebar_position: 8
+---
+
+# New Course
+
+Course summary and repository link.
+```
+
+未指定 `sidebar_position` 的页面使用默认排序。新增学科时，新建目录即可；
+可添加 `_category_.json` 设置英文分类名称和顺序，例如：
+
+```json
+{
+  "label": "Physics",
+  "position": 4
+}
+```
+
+分类介绍页使用 `index.md`。现有入口页通过 `slug` 保留原来的 URL；
+普通课程文件名不变时，链接也不变。
+
+首页计数、学科介绍页表格及本 README 的课程表仍为手写内容，不会自动同步。
+添加课程时还需更新这些摘要，并在课程页写明仓库链接、资料范围和 PDF 获取方式。
 只收录课程资料，不发布私有仓库或成员数据。
 
 ### GitHub Pages

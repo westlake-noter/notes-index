@@ -1,6 +1,7 @@
 ---
 title: Probability Theory
 sidebar_label: Probability Theory
+sidebar_position: 6
 ---
 
 # Probability Theory

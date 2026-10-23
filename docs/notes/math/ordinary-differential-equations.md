@@ -1,6 +1,7 @@
 ---
 title: Ordinary Differential Equations
 sidebar_label: Ordinary Differential Equations
+sidebar_position: 4
 ---
 
 # Ordinary Differential Equations

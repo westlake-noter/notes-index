@@ -1,7 +1,7 @@
 ---
-id: notes
 title: Course Notes
 sidebar_label: Course Notes
+sidebar_position: 1
 slug: /
 ---
 

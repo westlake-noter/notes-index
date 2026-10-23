@@ -1,5 +1,4 @@
 ---
-id: math
 title: Mathematics
 sidebar_label: Mathematics
 slug: /notes/math

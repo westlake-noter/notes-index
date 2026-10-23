@@ -1,6 +1,7 @@
 ---
 title: Linear Algebra
 sidebar_label: Linear Algebra
+sidebar_position: 3
 ---
 
 # Linear Algebra

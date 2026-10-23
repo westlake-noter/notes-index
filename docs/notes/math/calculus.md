@@ -1,6 +1,7 @@
 ---
 title: Calculus
 sidebar_label: Calculus
+sidebar_position: 2
 ---
 
 # Calculus

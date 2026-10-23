@@ -1,6 +1,7 @@
 ---
 title: Partial Differential Equations
 sidebar_label: Partial Differential Equations
+sidebar_position: 7
 ---
 
 # Partial Differential Equations

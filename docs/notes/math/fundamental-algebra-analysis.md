@@ -1,6 +1,7 @@
 ---
 title: Fundamental Algebra and Analysis
 sidebar_label: Fundamental Algebra and Analysis
+sidebar_position: 1
 ---
 
 # Fundamental Algebra and Analysis

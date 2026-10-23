@@ -1,5 +1,4 @@
 ---
-id: chemistry
 title: Chemistry
 sidebar_label: Chemistry
 slug: /notes/chemistry

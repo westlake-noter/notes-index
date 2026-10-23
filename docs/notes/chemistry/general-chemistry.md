@@ -1,6 +1,7 @@
 ---
 title: General Chemistry
 sidebar_label: General Chemistry
+sidebar_position: 1
 ---
 
 # General Chemistry
