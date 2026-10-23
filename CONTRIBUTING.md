@@ -147,6 +147,19 @@ effects or event handlers, or render browser-only components through
 </Tabs>
 ```
 
+## Icons and Motion
+
+Navigation, directory cards, and the theme toggle use Lucide-based icons from
+the MIT-licensed [AnimateIcons](https://github.com/Avijit07x/animateicons)
+React package. Import individual icons rather than the complete icon collection.
+`src/components/AnimatedIcon/` connects them to their parent link or button for
+hover, keyboard-focus, and click feedback without changing navigation behavior.
+
+Keep animations short and interaction-triggered, and respect
+`prefers-reduced-motion`. Test keyboard access, mobile menus, both color modes,
+and reduced-motion mode when changing animated controls. The navigation logo
+uses the supplied Westlake SVG with its original colors.
+
 ## Math and Diagrams
 
 KaTeX supports inline math with `$...$` and display math with `$$...$$`:

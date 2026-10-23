@@ -2,8 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
-import IconLightMode from '@theme/Icon/LightMode';
-import IconDarkMode from '@theme/Icon/DarkMode';
+import AnimatedIcon from '@site/src/components/AnimatedIcon';
 import styles from './styles.module.css';
 
 export default function ColorModeToggle({ className, buttonClassName, onChange }) {
@@ -22,8 +21,8 @@ export default function ColorModeToggle({ className, buttonClassName, onChange }
         title={label}
         aria-label={label}
       >
-        <IconLightMode aria-hidden="true" className={styles.lightIcon} />
-        <IconDarkMode aria-hidden="true" className={styles.darkIcon} />
+        <AnimatedIcon name="sun" className={styles.lightIcon} />
+        <AnimatedIcon name="moon" className={styles.darkIcon} />
       </button>
     </div>
   );

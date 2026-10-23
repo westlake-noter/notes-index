@@ -31,5 +31,5 @@
 
 :global(html[data-theme='light']) .lightIcon,
 :global(html[data-theme='dark']) .darkIcon {
-  display: block;
+  display: inline-flex;
 }

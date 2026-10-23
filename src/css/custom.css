@@ -91,12 +91,54 @@ body {
   font-weight: 600;
 }
 
+.navbar__logo {
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.navbar__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.animated-nav-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  vertical-align: middle;
+}
+
+.animated-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.animated-icon > div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.animated-icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .navbar__link {
   font-size: 14px;
   font-weight: 500;
 }
 
-.navbar__link--active {
+.navbar__link--active,
+.navbar__link--active .animated-nav-label > span:last-child {
   color: var(--ifm-font-color-base);
   text-decoration: underline;
   text-decoration-color: #fd8c73;
@@ -259,6 +301,11 @@ body {
   font-size: 16px;
 }
 
+.auto-doc-index .theme-doc-card-icon {
+  margin-right: 0.65rem;
+  color: var(--ifm-color-primary);
+}
+
 .auto-doc-index h2,
 .auto-doc-index p,
 .auto-doc-index .theme-doc-card-title {
@@ -285,6 +332,15 @@ body {
 :focus-visible {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-icon,
+  .animated-icon * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 996px) {
