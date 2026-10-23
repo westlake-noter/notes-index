@@ -21,7 +21,7 @@
   object-fit: cover;
   object-position: center;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent),
-    linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+    linear-gradient(to bottom, transparent, black 10%, black 78%, transparent);
   mask-composite: intersect;
 }
 
@@ -33,13 +33,17 @@
   background: color-mix(in srgb, var(--glass-background) 18%, transparent);
   backdrop-filter: blur(12px);
   mask-image: linear-gradient(to right, black, transparent 12%, transparent 88%, black),
-    linear-gradient(to bottom, black, transparent 34%, transparent 78%, black);
+    linear-gradient(to bottom, black, transparent 16%, transparent 78%, black);
 }
 
 .copy {
   padding: 38px 24px 64px;
   text-align: center;
-  background: linear-gradient(var(--glass-background), color-mix(in srgb, var(--glass-background) 88%, transparent) 65%, transparent);
+  background: linear-gradient(
+    color-mix(in srgb, var(--glass-background) 75%, transparent),
+    color-mix(in srgb, var(--glass-background) 25%, transparent) 40%,
+    transparent 80%
+  );
 }
 
 .eyebrow {
@@ -59,7 +63,7 @@
 
 .intro {
   margin: 0;
-  color: var(--ifm-font-color-secondary);
+  color: var(--glass-foreground);
   font-size: 17px;
   line-height: 1.6;
 }
