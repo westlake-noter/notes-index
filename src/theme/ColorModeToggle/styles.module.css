@@ -1,0 +1,35 @@
+.toggle {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:hover {
+  background: var(--ifm-menu-color-background-hover);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.lightIcon,
+.darkIcon {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+:global(html[data-theme='light']) .lightIcon,
+:global(html[data-theme='dark']) .darkIcon {
+  display: block;
+}

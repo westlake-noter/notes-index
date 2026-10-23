@@ -27,7 +27,8 @@ Repositories provide LaTeX sources; consult their READMEs for PDF availability. 
 
 The site currently uses English for all interface text and course summaries,
 with GitHub-inspired light and dark styles in `src/css/custom.css`.
-The color mode follows the system by default; manual preferences are remembered.
+The color mode follows the system on first visit. The toggle switches only
+between light and dark, and remembers the manual preference.
 
 站点地址：<https://westlake-noter.github.io/notes-index/>。
 
