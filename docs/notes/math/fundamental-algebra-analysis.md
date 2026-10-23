@@ -23,7 +23,7 @@ The course was taught by:
 - **Huayi CHEN** — chenhuayi@westlake.edu.cn
 - **Weronica Aniela Czerniawska**
 
-> Note: the author blocks on page 2 of both PDFs list Huayi CHEN and Jiete XUE (affiliations: *Department of Mathematics (ITS), School of Science, Westlake University* and *Undergraduate β College, Westlake University*). Jiete XUE is the maintainer/author of the repository and the notes, not a course instructor; Weronica Aniela Czerniawska is included as a course instructor per the course record.
+from 2025 fall to 2026 spring.
 
 ---
 
