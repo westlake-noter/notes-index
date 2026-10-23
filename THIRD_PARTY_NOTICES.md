@@ -11,10 +11,17 @@ commit `4b1052413e20e2834337fe6a24a0ef108e9ebabf`:
 - `packages/base-ui/src/layouts/glass/slots/sidebar.tsx`
 - `packages/base-ui/src/layouts/glass/slots/header.tsx`
 - `packages/base-ui/src/layouts/glass/page/index.tsx`
+- `packages/base-ui/src/components/toc/index.tsx`
+- `packages/base-ui/src/components/toc/block.tsx`
 
 The original Tailwind utilities are translated to CSS selectors for the existing
 Docusaurus components. Docusaurus continues to own routing, navigation, and the
 mobile drawer; the Fumadocs React layout is not installed.
+
+`src/theme/TOC/index.js` adapts the block TOC's resize-cached item positions and
+animated `clip-path`. A class observer connects it to Docusaurus's existing
+heading highlight instead of introducing a second scroll spy. The edge mask
+and fading active background are translated from the upstream TOC styles.
 
 ### MIT License
 

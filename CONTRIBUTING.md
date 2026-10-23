@@ -174,6 +174,12 @@ drawer. The desktop sidebar wrapper only adds the shared `Logo` component.
 Keep the logo transparent, preserve the two-state theme toggle, and check
 sidebar scrolling and mobile navigation after layout changes.
 
+The desktop `src/theme/TOC/` reuses Docusaurus heading detection and the
+Fumadocs block highlight algorithm. Preserve the edge fade, keyboard focus,
+reduced-motion behavior, and observer cleanup when editing it. The gray
+surfaces use blue highlights with restrained orange accents drawn from the
+supplied Westlake logo; keep orange text contrast-adjusted in both color modes.
+
 ## Math and Diagrams
 
 KaTeX supports inline math with `$...$` and display math with `$$...$$`:
