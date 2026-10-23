@@ -1,5 +1,6 @@
 ---
 title: Partial Differential Equations
+description: Fluid dynamics and the one-dimensional heat equation, with sources and a PDF.
 sidebar_label: Partial Differential Equations
 sidebar_position: 7
 ---

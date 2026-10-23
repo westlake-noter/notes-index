@@ -1,3 +1,5 @@
+@import 'katex/dist/katex.min.css';
+
 :root {
   color-scheme: light;
   --ifm-color-primary: #0969da;
@@ -235,6 +237,49 @@ body {
   font-size: 12px;
   font-weight: 500;
   padding: 3px 8px;
+}
+
+.auto-doc-index a.card {
+  height: 100%;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  box-shadow: none;
+  background: var(--ifm-background-color);
+}
+
+.auto-doc-index a.card:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.auto-doc-index h2 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+}
+
+.auto-doc-index h2,
+.auto-doc-index p,
+.auto-doc-index .theme-doc-card-title {
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.auto-doc-index .theme-doc-card-title {
+  font-size: 16px;
+}
+
+.auto-doc-index p {
+  color: var(--ifm-font-color-secondary);
+  font-size: 14px;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
 }
 
 :focus-visible {

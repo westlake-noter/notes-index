@@ -1,5 +1,6 @@
 ---
 title: Fundamental Algebra and Analysis
+description: Parts I and II lecture notes and related course materials.
 sidebar_label: Fundamental Algebra and Analysis
 sidebar_position: 1
 ---

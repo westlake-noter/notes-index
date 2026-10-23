@@ -1,5 +1,6 @@
 ---
 title: Calculus
+description: Single-variable and multivariable calculus, with LaTeX sources and PDFs.
 sidebar_label: Calculus
 sidebar_position: 2
 ---

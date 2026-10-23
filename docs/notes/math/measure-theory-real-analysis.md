@@ -1,5 +1,6 @@
 ---
 title: Measure Theory and Real Analysis
+description: Measure theory and real analysis notes with chapter-based LaTeX sources.
 sidebar_label: Measure Theory and Real Analysis
 sidebar_position: 5
 ---

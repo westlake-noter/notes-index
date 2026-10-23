@@ -1,5 +1,6 @@
 ---
 title: Ordinary Differential Equations
+description: Ordinary differential equations notes with chapter-based LaTeX sources.
 sidebar_label: Ordinary Differential Equations
 sidebar_position: 4
 ---

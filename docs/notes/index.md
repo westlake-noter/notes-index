@@ -11,10 +11,7 @@ Course notes from Westlake Noter and community contributors.
 
 ## Subjects
 
-| Subject | Repositories | Courses |
-| --- | ---: | --- |
-| [Mathematics](/notes/math) | 7 | Fundamental Algebra and Analysis, Calculus, Linear Algebra, Ordinary Differential Equations, Measure Theory and Real Analysis, Probability Theory, Partial Differential Equations |
-| [Chemistry](/notes/chemistry) | 1 | General Chemistry |
+<AutoDocIndex subjects />
 
 ## Reading Notes
 

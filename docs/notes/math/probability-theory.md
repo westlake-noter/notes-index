@@ -1,5 +1,6 @@
 ---
 title: Probability Theory
+description: Probability theory notes with chapter-based LaTeX sources.
 sidebar_label: Probability Theory
 sidebar_position: 6
 ---

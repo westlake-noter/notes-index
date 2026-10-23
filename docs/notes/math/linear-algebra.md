@@ -1,5 +1,6 @@
 ---
 title: Linear Algebra
+description: Vector spaces, matrices, linear maps, eigenvalues, and Jordan form.
 sidebar_label: Linear Algebra
 sidebar_position: 3
 ---

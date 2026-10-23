@@ -1,4 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -11,6 +13,7 @@ const config = {
   projectName: 'notes-index',
   onBrokenLinks: 'throw',
   markdown: {
+    mermaid: true,
     hooks: { onBrokenMarkdownLinks: 'throw' },
   },
   trailingSlash: true,
@@ -26,6 +29,10 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           breadcrumbs: true,
+          editUrl: 'https://github.com/westlake-noter/notes-index/edit/main/',
+          showLastUpdateTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
@@ -34,7 +41,11 @@ const config = {
       },
     ],
   ],
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    mermaid: {
+      theme: { light: 'neutral', dark: 'dark' },
+    },
     colorMode: {
       respectPrefersColorScheme: true,
     },

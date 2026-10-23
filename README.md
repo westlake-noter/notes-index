@@ -85,9 +85,70 @@ Course summary and repository link.
 分类介绍页使用 `index.md`。现有入口页通过 `slug` 保留原来的 URL；
 普通课程文件名不变时，链接也不变。
 
-首页计数、学科介绍页表格及本 README 的课程表仍为手写内容，不会自动同步。
-添加课程时还需更新这些摘要，并在课程页写明仓库链接、资料范围和 PDF 获取方式。
+首页学科目录与各学科课程目录通过 `<AutoDocIndex />` 自动生成，
+使用侧边栏中的标题、顺序与文档摘要；新增课程或学科无需再更新网页目录。
+可在课程 frontmatter 设置 `description` 来提供卡片摘要。
+本 README 的课程表仍为手写内容；课程页需写明仓库链接、资料范围和 PDF 获取方式。
 只收录课程资料，不发布私有仓库或成员数据。
+
+### 编辑入口与更新时间
+
+每篇页面底部提供 **Edit this page**，指向本仓库中对应的源文件。
+**Last updated** 来自该文件的 Git 提交记录，不代表外部课程仓库的更新时间。
+部署工作流拉取完整 Git 历史，以保证时间准确；新增文件提交后才有真实更新时间。
+`npm start` 的开发模式可能显示模拟日期，生产构建与部署使用真实提交日期。
+
+### MDX 与交互组件
+
+页面支持 MDX，可导入 `src/components/` 中的 React 组件；交互工具推荐使用 `.mdx`。
+`Tabs` 与 `TabItem` 已全局注册，无需逐页导入：
+
+```mdx
+<Tabs>
+  <TabItem value="source" label="Source" default>
+    LaTeX source files.
+  </TabItem>
+  <TabItem value="pdf" label="PDF">
+    Compiled lecture notes.
+  </TabItem>
+</Tabs>
+```
+
+需要状态时，在 `src/components/` 编写普通 React 组件，再从页面导入：
+
+```mdx
+import MyTool from '@site/src/components/MyTool';
+
+<MyTool />
+```
+
+组件只能在浏览器中访问 `window`、`document` 等 API，应放在 effect 或事件处理器中，
+或用 `@docusaurus/BrowserOnly` 包裹。Tools 当前仍保留为空，未添加演示工具。
+
+### 数学公式与 Mermaid
+
+数学公式使用本地打包的 KaTeX 样式与字体，不依赖外部 CDN。
+`package.json` 的 KaTeX override 将数学插件与 Mermaid 统一到已修复安全问题的版本；
+升级相关依赖时需一起验证公式与图表渲染。
+行内公式用 `$...$`，独立公式用 `$$...$$`：
+
+```md
+For $f(x) = x^2$, the derivative is $f'(x) = 2x$.
+
+$$
+\int_0^1 x^2\,dx = \frac{1}{3}
+$$
+```
+
+Mermaid 使用 `mermaid` 代码块，配色跟随站点明暗模式：
+
+````md
+```mermaid
+flowchart LR
+  Source[LaTeX source] --> Build[Compile]
+  Build --> PDF[PDF notes]
+```
+````
 
 ### GitHub Pages
 

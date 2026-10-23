@@ -1,5 +1,6 @@
 ---
 title: General Chemistry
+description: Chemical thermodynamics, electrochemistry, and chemical kinetics.
 sidebar_label: General Chemistry
 sidebar_position: 1
 ---
