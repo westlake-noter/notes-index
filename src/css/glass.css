@@ -52,6 +52,7 @@ html[data-theme='dark'] {
   --ifm-hr-background-color: var(--glass-border);
   --ifm-toc-border-color: var(--glass-border);
   --ifm-breadcrumb-color-active: var(--glass-muted-foreground);
+  --ifm-pagination-nav-border-hover: var(--site-orange-emphasis);
   --site-border: var(--glass-border);
   --site-subtle-bg: var(--glass-secondary);
   --site-active-link-bg: var(--site-blue-tint);
@@ -115,6 +116,14 @@ html[data-theme='dark'] {
 
 .auto-doc-index a.card:hover .theme-doc-card-icon {
   color: var(--site-orange-emphasis);
+}
+
+.auto-doc-index a.card:hover {
+  border-color: var(--site-orange-emphasis);
+}
+
+:focus-visible {
+  outline-color: var(--site-orange-emphasis);
 }
 
 .glass-toc {
