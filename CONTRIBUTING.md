@@ -219,6 +219,18 @@ text-only edits. A commit that changes both repository documentation and site
 files still triggers the workflow. Manual runs remain available through
 **Actions > Build and Deploy Pages > Run workflow**.
 
+CI reuses the npm download cache and Webpack's persistent compilation cache.
+The Webpack cache is restored after `npm ci`, is separated by runner platform,
+Node version, dependencies, and site configuration, and is refreshed for each
+commit. Generated site output is rebuilt, not restored as the published artifact.
+The first build after a dependency or configuration change starts with a cold
+compilation cache; cache hits do not eliminate the build or deployment steps.
+
+New runs cancel older builds for the same branch or pull request. Deployments
+remain serialized and are not interrupted by newer builds. Before publishing,
+the deployment job checks that its commit is still the latest commit on `main`;
+stale runs and manual runs on other branches do not publish.
+
 If branch protection later requires the build check, revisit these path filters:
 a skipped workflow does not report a successful required check.
 

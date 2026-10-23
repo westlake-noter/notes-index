@@ -18,6 +18,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages-build-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,6 +30,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Restore Webpack build cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/webpack
+          key: ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
@@ -47,6 +57,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check this is still the latest main commit
+        id: latest
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {data} = await github.rest.git.getRef({
+              ...context.repo,
+              ref: 'heads/main',
+            });
+            const current = context.ref === 'refs/heads/main' &&
+              data.object.sha === context.sha;
+            core.setOutput('current', current);
+            if (!current) {
+              core.notice('Skipping deployment: this run is not the latest main commit.');
+            }
       - name: Deploy
+        if: steps.latest.outputs.current == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
