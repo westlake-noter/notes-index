@@ -212,6 +212,19 @@ the checks you ran. Include screenshots for visible interface changes and
 mention any changed URLs. Keep unrelated changes in separate pull requests.
 
 The GitHub Actions workflow checks production builds on pull requests and
-deploys updates to `main`. Maintainers configure **Settings > Pages > Source**
+deploys updates to `main`. Changes limited to root Markdown files, such as
+`README.md` and `CONTRIBUTING.md`, skip this workflow on both pushes and pull
+requests. Site pages in `docs/` still require a full Docusaurus build, even for
+text-only edits. A commit that changes both repository documentation and site
+files still triggers the workflow. Manual runs remain available through
+**Actions > Build and Deploy Pages > Run workflow**.
+
+If branch protection later requires the build check, revisit these path filters:
+a skipped workflow does not report a successful required check.
+
+For root-documentation-only changes, check the Markdown links and code blocks
+and run `git diff --check`; a local site build is optional.
+
+Maintainers configure **Settings > Pages > Source**
 as **GitHub Actions**. Site address settings live in `docusaurus.config.js`;
 deployment configuration lives in `.github/workflows/pages.yml`.

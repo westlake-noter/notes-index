@@ -18,6 +18,8 @@ notes; corrections to those notes belong in their source repositories.
 - **Appearance:** an English interface with GitHub-inspired styling; the initial
   color mode follows the system, with a persistent light/dark toggle.
 - **Deployment:** GitHub Actions builds the site and publishes it to GitHub Pages.
+  Changes limited to root Markdown files, such as this README or the contribution
+  guide, skip the Pages workflow.
 
 ## Local Development
 
