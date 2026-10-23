@@ -180,6 +180,13 @@ reduced-motion behavior, and observer cleanup when editing it. The gray
 surfaces use blue highlights with restrained orange accents drawn from the
 supplied Westlake logo; keep orange text contrast-adjusted in both color modes.
 
+The desktop navbar uses `headroom.js` for scroll direction, offset, and tolerance.
+`src/theme/Navbar/Layout/` wraps the original layout without replacing navigation
+or the mobile drawer. Downward scrolling contracts the surface toward the right
+actions; upward scrolling, route changes, and navigation focus expand it.
+Keep hidden left-hand links inert, respect reduced motion, and test both sides
+of the 997px desktop breakpoint when editing this behavior.
+
 ## Math and Diagrams
 
 KaTeX supports inline math with `$...$` and display math with `$$...$$`:
