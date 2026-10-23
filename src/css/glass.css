@@ -96,7 +96,6 @@ html[data-theme='dark'] {
 
 .navbar__link--active {
   background: var(--site-blue-tint);
-  box-shadow: inset 0 -2px color-mix(in srgb, var(--westlake-orange) 75%, transparent);
 }
 
 .navbar__link:not(.navbar__link--active):hover {
