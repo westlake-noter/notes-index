@@ -15,7 +15,8 @@ notes; corrections to those notes belong in their source repositories.
 - **Course Notes:** subject and course pages with automatically generated navigation.
 - **Tools:** a separate section, currently reserved for future additions.
 - **Authoring:** Markdown and MDX, React components, KaTeX formulas, and Mermaid diagrams.
-- **Appearance:** an English interface with GitHub-inspired styling; the initial
+- **Appearance:** an English interface with Fumadocs Glass-inspired surfaces and
+  GitHub-style reading density; the initial
   color mode follows the system, with a persistent light/dark toggle.
 - **Deployment:** GitHub Actions builds the site and publishes it to GitHub Pages.
   Changes limited to root Markdown files, such as this README or the contribution

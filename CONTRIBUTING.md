@@ -42,7 +42,9 @@ docs/
     index.md
 src/
   components/
-  css/custom.css
+  css/
+    custom.css
+    glass.css
   theme/
 sidebars.js
 docusaurus.config.js
@@ -159,6 +161,18 @@ Keep animations short and interaction-triggered, and respect
 `prefers-reduced-motion`. Test keyboard access, mobile menus, both color modes,
 and reduced-motion mode when changing animated controls. The navigation logo
 uses the supplied Westlake SVG with its original colors.
+
+## Layout and Upstream Styles
+
+`src/css/glass.css` adapts Fumadocs Glass color tokens and layout utilities to
+Docusaurus. The upstream source paths, pinned commit, and MIT license are
+recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Preserve that
+attribution when changing derived styles.
+
+Use the existing Docusaurus components for routing, navigation, and the mobile
+drawer. The desktop sidebar wrapper only adds the shared `Logo` component.
+Keep the logo transparent, preserve the two-state theme toggle, and check
+sidebar scrolling and mobile navigation after layout changes.
 
 ## Math and Diagrams
 

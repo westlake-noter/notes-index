@@ -1,0 +1,215 @@
+/*
+ * Adapted from Fumadocs Glass (MIT), commit 4b1052413e20e2834337fe6a24a0ef108e9ebabf.
+ * Sources: packages/base-ui/css/lib/default-colors.css and
+ * packages/base-ui/src/layouts/glass/{index,slots/sidebar,slots/header,page/index}.tsx.
+ * Tailwind utilities are translated to native Docusaurus selectors below.
+ * See THIRD_PARTY_NOTICES.md for the upstream license.
+ */
+:root {
+  --glass-background: hsl(0, 0%, 96%);
+  --glass-foreground: hsl(0, 0%, 3.9%);
+  --glass-muted-foreground: hsl(0, 0%, 45.1%);
+  --glass-popover: hsl(0, 0%, 98%);
+  --glass-border: hsla(0, 0%, 80%, 50%);
+  --glass-secondary: hsl(0, 0%, 93.1%);
+  --glass-accent: hsla(0, 0%, 82%, 50%);
+  --glass-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+html[data-theme='dark'] {
+  --glass-background: hsl(0, 0%, 7.04%);
+  --glass-foreground: hsl(0, 0%, 92%);
+  --glass-muted-foreground: hsla(0, 0%, 70%, 0.8);
+  --glass-popover: hsl(0, 0%, 11.6%);
+  --glass-border: hsla(0, 0%, 40%, 20%);
+  --glass-secondary: hsl(0, 0%, 12.9%);
+  --glass-accent: hsla(0, 0%, 40.9%, 30%);
+}
+
+:root,
+html[data-theme='dark'] {
+  --ifm-background-color: var(--glass-background);
+  --ifm-background-surface-color: var(--glass-popover);
+  --ifm-font-color-base: var(--glass-foreground);
+  --ifm-font-color-secondary: var(--glass-muted-foreground);
+  --ifm-navbar-background-color: transparent;
+  --ifm-footer-background-color: transparent;
+  --ifm-footer-color: var(--glass-muted-foreground);
+  --ifm-footer-link-color: var(--glass-muted-foreground);
+  --ifm-footer-title-color: var(--glass-foreground);
+  --ifm-menu-color: var(--glass-muted-foreground);
+  --ifm-menu-color-background-hover: var(--glass-accent);
+  --ifm-menu-color-background-active: var(--glass-accent);
+  --ifm-code-background: var(--glass-secondary);
+  --ifm-table-background: var(--glass-background);
+  --ifm-table-stripe-background: var(--glass-secondary);
+  --ifm-table-border-color: var(--glass-border);
+  --ifm-hr-background-color: var(--glass-border);
+  --ifm-toc-border-color: var(--glass-border);
+  --ifm-breadcrumb-color-active: var(--glass-muted-foreground);
+  --site-border: var(--glass-border);
+  --site-subtle-bg: var(--glass-secondary);
+}
+
+.navbar {
+  top: 8px;
+  height: 56px;
+  margin: 8px;
+  padding: 0 12px;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Blur the surface, not the ancestor of Docusaurus's fixed mobile drawer. */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  background: var(--glass-popover);
+  background: color-mix(in srgb, var(--glass-popover) 80%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--glass-shadow);
+}
+
+.navbar__inner {
+  gap: 8px;
+}
+
+.navbar__link {
+  padding: 7px 12px;
+  border-radius: 8px;
+}
+
+.navbar__link--active,
+.navbar__link--active .animated-nav-label > span:last-child {
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  background: var(--glass-secondary);
+}
+
+.menu__link {
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.theme-doc-markdown h1 {
+  font-size: 28px;
+}
+
+.footer {
+  margin: 0 24px;
+  padding: 24px 0;
+}
+
+@media (min-width: 997px) {
+  :root {
+    --doc-sidebar-width: 280px;
+  }
+
+  .navbar {
+    margin-left: calc(var(--doc-sidebar-width) + 16px);
+    width: calc(100% - var(--doc-sidebar-width) - 24px);
+  }
+
+  .navbar__brand {
+    display: none;
+  }
+
+  aside.theme-doc-sidebar-container {
+    margin-top: -72px;
+    background: transparent;
+    border: 0;
+    clip-path: none;
+  }
+
+  /* The native docs container ends before the footer; keep the island intact. */
+  .theme-doc-sidebar-container > div {
+    position: fixed;
+    top: 8px;
+    width: var(--doc-sidebar-width);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .glass-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 8px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    background: var(--glass-popover);
+    background: color-mix(in srgb, var(--glass-popover) 80%, transparent);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+  }
+
+  .glass-sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 18px 12px;
+    color: var(--glass-foreground);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .glass-sidebar-brand:hover {
+    color: var(--glass-foreground);
+    text-decoration: none;
+  }
+
+  .glass-sidebar > div {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .theme-doc-sidebar-container .menu {
+    padding: 8px;
+  }
+
+  .main-wrapper .container {
+    max-width: 1200px;
+    padding: 32px 24px;
+  }
+
+  .footer {
+    margin-left: calc(var(--doc-sidebar-width) + 40px);
+  }
+}
+
+@media (max-width: 996px) {
+  .navbar__title {
+    font-size: 14px;
+  }
+
+  .navbar__brand {
+    min-width: 0;
+  }
+
+  .navbar-sidebar {
+    top: -8px;
+    left: -8px;
+    height: 100dvh;
+  }
+
+  .navbar-sidebar__backdrop {
+    top: -8px;
+    left: -8px;
+    width: 100vw;
+    height: 100dvh;
+  }
+}
