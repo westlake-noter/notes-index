@@ -62,7 +62,9 @@ need to register individual pages there.
 
 The homepage lives at `/`; the course directory lives at `/notes/`. Edit
 `src/pages/index.js` and its CSS module for the homepage skeleton. The campus
-map uses Docusaurus `ThemedImage` to follow the selected theme. When replacing
+map uses `src/components/CampusMap` with Docusaurus `ThemedComponent` to follow
+the selected theme. It shows a skeleton until the selected image is loaded and
+decoded, and leaves a static placeholder if loading fails. When replacing
 the maps, retain their attribution and keep both theme variants at matching
 dimensions. The current WebP assets were converted from the user-supplied
 3543 x 1476 PNG exports at quality 90 without resizing.

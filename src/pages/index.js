@@ -1,9 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import ThemedImage from '@theme/ThemedImage';
 import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnimatedIcon from '@site/src/components/AnimatedIcon';
+import CampusMap from '@site/src/components/CampusMap';
 import styles from './index.module.css';
 
 export default function Home() {
@@ -14,17 +13,7 @@ export default function Home() {
     >
       <main className={styles.home}>
         <section className={styles.hero} aria-labelledby="home-title">
-          <ThemedImage
-            className={styles.map}
-            sources={{
-              light: useBaseUrl('/img/campus-light.webp'),
-              dark: useBaseUrl('/img/campus-dark.webp'),
-            }}
-            alt="Map of Westlake University's Yungu Campus"
-            width="3543"
-            height="1476"
-            fetchPriority="high"
-          />
+          <CampusMap />
           <div className={styles.edgeGlass} aria-hidden="true" />
           <div className={styles.copy}>
             <p className={styles.eyebrow}>A student-led, open-source collection</p>
