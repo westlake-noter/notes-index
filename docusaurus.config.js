@@ -3,7 +3,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Westlake Noter',
-  tagline: '课程笔记索引',
+  tagline: 'Course Notes Index',
   favicon: 'img/favicon.svg',
   url: 'https://westlake-noter.github.io',
   baseUrl: '/notes-index/',
@@ -15,8 +15,8 @@ const config = {
   },
   trailingSlash: true,
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
   presets: [
     [
@@ -35,6 +35,9 @@ const config = {
     ],
   ],
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: 'Westlake Noter',
       logo: {
@@ -46,7 +49,7 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'notesSidebar',
           position: 'left',
-          label: '课程笔记',
+          label: 'Course Notes',
         },
         {
           href: 'https://github.com/westlake-noter/notes-index',
@@ -56,23 +59,22 @@ const config = {
       ],
     },
     footer: {
-      style: 'dark',
       links: [
         {
-          title: '索引',
+          title: 'Index',
           items: [
-            { label: '课程笔记', to: '/' },
+            { label: 'Course Notes', to: '/' },
           ],
         },
         {
-          title: '社区',
+          title: 'Community',
           items: [
             {
-              label: '社区协作中心',
+              label: 'Community Hub',
               href: 'https://github.com/westlake-noter/community',
             },
             {
-              label: '成员申请',
+              label: 'Join the Organization',
               href: 'https://github.com/westlake-noter/membership-application',
             },
           ],

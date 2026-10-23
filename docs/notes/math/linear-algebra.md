@@ -1,14 +1,14 @@
 ---
-title: 线性代数
-sidebar_label: 线性代数
+title: Linear Algebra
+sidebar_label: Linear Algebra
 ---
 
-# 线性代数
+# Linear Algebra
 
-<div className="repo-meta"><span>数学</span><span>TeX</span><span>2025 Fall–2026 Spring</span></div>
+<div className="repo-meta"><span>Mathematics</span><span>TeX</span><span>Fall 2025 - Spring 2026</span></div>
 
-线性代数 A 类（上、下）课程讲义，提供 LaTeX 源码与 PDF。
+Lecture notes for Linear Algebra Track A, covering both semesters. LaTeX sources and PDFs are available.
 
-- 仓库：[Linear-Algebra-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Linear-Algebra-notes)
-- 内容：向量空间、矩阵、线性映射、正交性、特征值与若尔当标准型等
-- 阅读：PDF 获取方式以仓库 README 和文件列表为准
+- Repository: [Linear-Algebra-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Linear-Algebra-notes)
+- Contents: vector spaces, matrices, linear maps, orthogonality, eigenvalues, and Jordan form.
+- Reading: see the repository README and file list for PDFs.

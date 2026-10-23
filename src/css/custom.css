@@ -1,35 +1,218 @@
 :root {
-  --ifm-color-primary: #176b87;
-  --ifm-color-primary-dark: #156078;
-  --ifm-color-primary-darker: #145a71;
-  --ifm-color-primary-darkest: #10495d;
-  --ifm-color-primary-light: #197696;
-  --ifm-color-primary-lighter: #1a7c9c;
-  --ifm-color-primary-lightest: #238fb0;
-  --ifm-code-font-size: 95%;
-  --ifm-heading-font-weight: 700;
+  color-scheme: light;
+  --ifm-color-primary: #0969da;
+  --ifm-color-primary-dark: #0550ae;
+  --ifm-color-primary-darker: #033d8b;
+  --ifm-color-primary-darkest: #032f62;
+  --ifm-color-primary-light: #218bff;
+  --ifm-color-primary-lighter: #54aeff;
+  --ifm-color-primary-lightest: #80ccff;
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f6f8fa;
+  --ifm-font-color-base: #1f2328;
+  --ifm-font-color-secondary: #59636e;
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-font-family-monospace: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --ifm-code-font-size: 85%;
+  --ifm-code-background: #eff1f3;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-line-height: 1.25;
+  --ifm-global-radius: 6px;
+  --ifm-navbar-background-color: #f6f8fa;
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-height: 64px;
+  --ifm-footer-background-color: #f6f8fa;
+  --ifm-footer-color: #59636e;
+  --ifm-footer-link-color: #59636e;
+  --ifm-footer-title-color: #1f2328;
+  --ifm-menu-color: #1f2328;
+  --ifm-menu-color-background-active: #eaeef2;
+  --ifm-menu-color-background-hover: #eaeef2;
+  --ifm-table-background: #ffffff;
+  --ifm-table-stripe-background: #f6f8fa;
+  --ifm-table-border-color: #d1d9e0;
+  --ifm-hr-background-color: #d1d9e0;
+  --ifm-toc-border-color: #d1d9e0;
+  --ifm-breadcrumb-color-active: #59636e;
+  --ifm-breadcrumb-item-background-active: transparent;
+  --ifm-pagination-nav-border-hover: #0969da;
+  --site-border: #d1d9e0;
+  --site-subtle-bg: #f6f8fa;
+  --site-active-link-bg: #ddf4ff;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --ifm-color-primary: #4493f8;
+  --ifm-color-primary-dark: #79b8ff;
+  --ifm-color-primary-darker: #a5d6ff;
+  --ifm-color-primary-darkest: #cae8ff;
+  --ifm-color-primary-light: #79b8ff;
+  --ifm-color-primary-lighter: #a5d6ff;
+  --ifm-color-primary-lightest: #cae8ff;
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #151b23;
+  --ifm-font-color-base: #f0f6fc;
+  --ifm-font-color-secondary: #9198a1;
+  --ifm-code-background: #262c36;
+  --ifm-navbar-background-color: #151b23;
+  --ifm-footer-background-color: #151b23;
+  --ifm-footer-color: #9198a1;
+  --ifm-footer-link-color: #9198a1;
+  --ifm-footer-title-color: #f0f6fc;
+  --ifm-menu-color: #f0f6fc;
+  --ifm-menu-color-background-active: #212830;
+  --ifm-menu-color-background-hover: #212830;
+  --ifm-table-background: #0d1117;
+  --ifm-table-stripe-background: #151b23;
+  --ifm-table-border-color: #3d444d;
+  --ifm-hr-background-color: #3d444d;
+  --ifm-toc-border-color: #3d444d;
+  --ifm-breadcrumb-color-active: #9198a1;
+  --ifm-pagination-nav-border-hover: #4493f8;
+  --site-border: #3d444d;
+  --site-subtle-bg: #151b23;
+  --site-active-link-bg: #1c2d41;
 }
 
 body {
-  background: #f6f8f7;
+  background: var(--ifm-background-color);
+  letter-spacing: 0;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--site-border);
+}
+
+.navbar__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navbar__link--active {
+  color: var(--ifm-font-color-base);
+  text-decoration: underline;
+  text-decoration-color: #fd8c73;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+}
+
+.theme-doc-sidebar-container {
+  background: var(--site-subtle-bg);
+  border-right: 1px solid var(--site-border);
+}
+
+.theme-doc-sidebar-menu {
+  font-size: 14px;
+}
+
+.menu__link {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--site-active-link-bg);
+  box-shadow: inset 3px 0 var(--ifm-color-primary);
+}
+
+.breadcrumbs {
+  font-size: 12px;
+}
+
+.theme-doc-markdown {
+  line-height: 1.6;
+}
+
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3 {
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .theme-doc-markdown h1 {
-  letter-spacing: 0;
+  font-size: 32px;
+}
+
+.theme-doc-markdown h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--site-border);
+  font-size: 24px;
+}
+
+.theme-doc-markdown h3 {
+  font-size: 20px;
+}
+
+.theme-doc-markdown a:hover {
+  text-decoration: underline;
 }
 
 .theme-doc-markdown table {
   display: block;
   width: 100%;
   overflow-x: auto;
+  font-size: 14px;
+}
+
+.theme-doc-markdown th,
+.theme-doc-markdown td {
+  padding: 10px 14px;
+  border-color: var(--site-border);
+  text-align: left;
 }
 
 .theme-doc-markdown td {
   overflow-wrap: anywhere;
 }
 
+.theme-doc-markdown td:first-child {
+  min-width: 8rem;
+}
+
 .theme-doc-markdown table th {
   white-space: nowrap;
+  background: var(--site-subtle-bg);
+  font-weight: 600;
+}
+
+.pagination-nav__link {
+  border-color: var(--site-border);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.pagination-nav__sublabel {
+  color: var(--ifm-font-color-secondary);
+  font-size: 12px;
+}
+
+.pagination-nav__label {
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  border-top: 1px solid var(--site-border);
+  font-size: 14px;
+}
+
+.footer__title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer__copyright {
+  color: var(--ifm-font-color-secondary);
+  font-size: 12px;
 }
 
 .repo-meta {
@@ -40,18 +223,27 @@ body {
 }
 
 .repo-meta span {
-  border: 1px solid #d9e4e2;
-  border-radius: 999px;
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.85rem;
-  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  background: var(--site-subtle-bg);
+  color: var(--ifm-font-color-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 8px;
 }
 
-[data-theme='dark'] body {
-  background: #151a1b;
+:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
-[data-theme='dark'] .repo-meta span {
-  border-color: #34494b;
-  background: #1d292b;
+@media (max-width: 996px) {
+  .navbar-sidebar {
+    background: var(--ifm-background-color);
+  }
+
+  .theme-doc-markdown th,
+  .theme-doc-markdown td {
+    padding: 8px 10px;
+  }
 }

@@ -1,14 +1,14 @@
 ---
-title: 概率论
-sidebar_label: 概率论
+title: Probability Theory
+sidebar_label: Probability Theory
 ---
 
-# 概率论
+# Probability Theory
 
-<div className="repo-meta"><span>数学</span><span>TeX</span><span>按章节整理</span></div>
+<div className="repo-meta"><span>Mathematics</span><span>TeX</span><span>Chapter-based notes</span></div>
 
-概率论课程笔记，按章节组织 LaTeX 源文件。
+Course notes for Probability Theory, with LaTeX sources organized by chapter.
 
-- 仓库：[Probability-Theory](https://github.com/westlake-noter/Probability-Theory)
-- 内容：`Probability Theory.tex` 主文档与 `Chapters/` 章节文件
-- 状态：随新增笔记与勘误更新
+- Repository: [Probability-Theory](https://github.com/westlake-noter/Probability-Theory)
+- Contents: `Probability Theory.tex` and chapter sources in `Chapters/`.
+- Maintenance: updated as new notes and corrections become available.

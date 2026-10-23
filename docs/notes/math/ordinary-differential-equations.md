@@ -1,15 +1,15 @@
 ---
-title: 常微分方程
-sidebar_label: 常微分方程
+title: Ordinary Differential Equations
+sidebar_label: Ordinary Differential Equations
 ---
 
-# 常微分方程
+# Ordinary Differential Equations
 
-<div className="repo-meta"><span>数学</span><span>TeX</span><span>按章节整理</span></div>
+<div className="repo-meta"><span>Mathematics</span><span>TeX</span><span>Chapter-based notes</span></div>
 
-常微分方程课程笔记，按章节组织 LaTeX 源文件。
+Course notes for Ordinary Differential Equations, with LaTeX sources organized by chapter.
 
-- 仓库：[Ordinary-Differential-Equations](https://github.com/westlake-noter/Ordinary-Differential-Equations)
-- 内容：主文档与 `Chapters/` 章节文件
-- 构建：使用 XeLaTeX 编译，具体命令见仓库 README
-- 状态：随新增章节与勘误更新
+- Repository: [Ordinary-Differential-Equations](https://github.com/westlake-noter/Ordinary-Differential-Equations)
+- Contents: the main document and chapter sources in `Chapters/`.
+- Build: compile with XeLaTeX; see the repository README for commands.
+- Maintenance: updated as new chapters and corrections become available.

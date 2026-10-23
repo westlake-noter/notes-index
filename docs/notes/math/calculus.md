@@ -1,14 +1,14 @@
 ---
-title: 微积分
-sidebar_label: 微积分
+title: Calculus
+sidebar_label: Calculus
 ---
 
-# 微积分
+# Calculus
 
-<div className="repo-meta"><span>数学</span><span>TeX</span><span>2025 Fall–2026 Spring</span></div>
+<div className="repo-meta"><span>Mathematics</span><span>TeX</span><span>Fall 2025 - Spring 2026</span></div>
 
-微积分 A 类（上、下）课程讲义，提供 LaTeX 源码与 PDF。
+Lecture notes for Calculus Track A, covering both semesters. LaTeX sources and PDFs are available.
 
-- 仓库：[Calculus-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Calculus-notes)
-- 内容：单变量与多变量微积分课程笔记
-- 阅读：PDF 获取方式以仓库 README 和文件列表为准
+- Repository: [Calculus-lecture-notes-2025fall-2026spring](https://github.com/qwerasdasd1/Calculus-notes)
+- Contents: single-variable and multivariable calculus.
+- Reading: see the repository README and file list for PDFs.

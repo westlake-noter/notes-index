@@ -25,6 +25,10 @@ Repositories provide LaTeX sources; consult their READMEs for PDF availability. 
 
 ## Docusaurus 站点
 
+The site currently uses English for all interface text and course summaries,
+with GitHub-inspired light and dark styles in `src/css/custom.css`.
+The color mode follows the system by default; manual preferences are remembered.
+
 站点地址：<https://westlake-noter.github.io/notes-index/>。
 
 本地开发需要 Node.js 22：

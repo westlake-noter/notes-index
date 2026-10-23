@@ -1,15 +1,15 @@
 ---
-title: 普通化学
-sidebar_label: 普通化学
+title: General Chemistry
+sidebar_label: General Chemistry
 ---
 
-# 普通化学
+# General Chemistry
 
-<div className="repo-meta"><span>化学</span><span>章节笔记</span><span>持续整理</span></div>
+<div className="repo-meta"><span>Chemistry</span><span>Chapter-based notes</span><span>In progress</span></div>
 
-普通化学课程笔记，已完成前三章。
+Course notes for General Chemistry. The first three chapters are complete.
 
-- 仓库：[General-Chemistry](https://github.com/JiamingShi-JsPhys/chem-notes)
-- 已完成：化学热力学、电化学、化学动力学
-- PDF：中英文版本均可从 [Releases](https://github.com/JiamingShi-JsPhys/chem-notes/releases/latest) 获取
-- 状态：持续整理中
+- Repository: [General-Chemistry](https://github.com/JiamingShi-JsPhys/chem-notes)
+- Completed topics: chemical thermodynamics, electrochemistry, and chemical kinetics.
+- PDFs: English and Chinese editions are available from [Releases](https://github.com/JiamingShi-JsPhys/chem-notes/releases/latest).
+- Status: in progress.

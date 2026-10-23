@@ -1,15 +1,15 @@
 ---
-title: 偏微分方程
-sidebar_label: 偏微分方程
+title: Partial Differential Equations
+sidebar_label: Partial Differential Equations
 ---
 
-# 偏微分方程
+# Partial Differential Equations
 
-<div className="repo-meta"><span>数学</span><span>TeX</span><span>2026 Fall</span><span>整理中</span></div>
+<div className="repo-meta"><span>Mathematics</span><span>TeX</span><span>Fall 2026</span><span>In progress</span></div>
 
-偏微分方程课程笔记，提供 LaTeX 源码与 PDF。
+Course notes for Partial Differential Equations, with LaTeX sources and a compiled PDF.
 
-- 仓库：[PDE-lecture-notes-2026fall](https://github.com/qwerasdasd1/PDE-notes)
-- 内容：流体力学与一维热方程
-- PDF：[main.pdf](https://github.com/qwerasdasd1/PDE-notes/blob/main/main.pdf)
-- 状态：持续整理中
+- Repository: [PDE-lecture-notes-2026fall](https://github.com/qwerasdasd1/PDE-notes)
+- Contents: fluid dynamics and the one-dimensional heat equation.
+- PDF: [main.pdf](https://github.com/qwerasdasd1/PDE-notes/blob/main/main.pdf)
+- Status: in progress.

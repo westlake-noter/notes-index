@@ -4,7 +4,7 @@ const sidebars = {
     'notes',
     {
       type: 'category',
-      label: '数学',
+      label: 'Mathematics',
       link: { type: 'doc', id: 'notes/math' },
       items: [
         'notes/math/fundamental-algebra-analysis',
@@ -18,7 +18,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '化学',
+      label: 'Chemistry',
       link: { type: 'doc', id: 'notes/chemistry' },
       items: ['notes/chemistry/general-chemistry'],
     },

@@ -1,12 +1,12 @@
 ---
 id: chemistry
-title: 化学
-sidebar_label: 化学
+title: Chemistry
+sidebar_label: Chemistry
 slug: /notes/chemistry
 ---
 
-# 化学课程笔记
+# Chemistry
 
-| 课程 | 笔记仓库 |
+| Course | Repository |
 | --- | --- |
-| [普通化学](/notes/chemistry/general-chemistry) | General-Chemistry |
+| [General Chemistry](/notes/chemistry/general-chemistry) | General-Chemistry |
