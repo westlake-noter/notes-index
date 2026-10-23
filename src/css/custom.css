@@ -94,10 +94,6 @@ body {
 .navbar__logo {
   width: 36px;
   height: 36px;
-  padding: 4px;
-  border: 1px solid var(--site-border);
-  border-radius: 6px;
-  background: #ffffff;
 }
 
 .navbar__logo img {
