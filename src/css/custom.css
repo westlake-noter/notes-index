@@ -1,0 +1,57 @@
+:root {
+  --ifm-color-primary: #176b87;
+  --ifm-color-primary-dark: #156078;
+  --ifm-color-primary-darker: #145a71;
+  --ifm-color-primary-darkest: #10495d;
+  --ifm-color-primary-light: #197696;
+  --ifm-color-primary-lighter: #1a7c9c;
+  --ifm-color-primary-lightest: #238fb0;
+  --ifm-code-font-size: 95%;
+  --ifm-heading-font-weight: 700;
+}
+
+body {
+  background: #f6f8f7;
+}
+
+.theme-doc-markdown h1 {
+  letter-spacing: 0;
+}
+
+.theme-doc-markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.theme-doc-markdown td {
+  overflow-wrap: anywhere;
+}
+
+.theme-doc-markdown table th {
+  white-space: nowrap;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.repo-meta span {
+  border: 1px solid #d9e4e2;
+  border-radius: 999px;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  padding: 0.25rem 0.65rem;
+}
+
+[data-theme='dark'] body {
+  background: #151a1b;
+}
+
+[data-theme='dark'] .repo-meta span {
+  border-color: #34494b;
+  background: #1d292b;
+}

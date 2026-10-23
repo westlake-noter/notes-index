@@ -22,3 +22,38 @@ An index of the organization's existing course notes. See each repository's READ
 - 各仓库提供 LaTeX 源码；PDF 的获取方式以各仓库说明为准。代数与分析基础的 PDF 包请查看其 [Releases](https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/releases)。
 
 Repositories provide LaTeX sources; consult their READMEs for PDF availability. For Fundamental Algebra and Analysis PDF bundles, check its Releases page.
+
+## Docusaurus 站点
+
+站点地址：<https://westlake-noter.github.io/notes-index/>。
+
+本地开发需要 Node.js 22：
+
+```sh
+npm ci
+npm start
+```
+
+本地地址为 `http://localhost:3000/notes-index/`。生产构建和预览：
+
+```sh
+npm run build
+npm run serve
+```
+
+### 内容维护
+
+- `docs/notes.md`：站点首页与学科入口。
+- `docs/notes/math.md`、`docs/notes/chemistry.md`：学科目录。
+- `docs/notes/<学科>/<仓库>.md`：每个课程仓库独立的介绍页面。
+- `sidebars.js`：侧边栏的学科分类和课程顺序。
+
+添加课程时，在对应学科目录新建 `.md`，写明课程名称、仓库链接、
+资料范围和 PDF 获取方式，同时更新学科目录、首页计数、侧边栏及本 README。
+只收录课程资料，不发布私有仓库或成员数据。
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` 会在 PR 上验证构建，在 `main` 更新后部署。
+仓库 **Settings → Pages → Source** 应选择 **GitHub Actions**。
+站点的 `url` 和 `baseUrl` 已按本仓库地址配置。
