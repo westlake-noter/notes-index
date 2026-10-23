@@ -2,10 +2,10 @@
 title: Course Notes
 sidebar_label: Course Notes
 sidebar_position: 1
-slug: /
+slug: /notes
 ---
 
-# Westlake Noter
+# Course Notes
 
 Course notes from Westlake Noter and community contributors.
 

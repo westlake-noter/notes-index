@@ -1,0 +1,238 @@
+/* Fumadocs home composition: layered hero, inline actions, constrained sections.
+ * Adapted to native Docusaurus components; see THIRD_PARTY_NOTICES.md. */
+.home {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  height: min(680px, calc(100svh - 150px));
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+    linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+  mask-composite: intersect;
+}
+
+.edgeGlass {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--glass-background) 18%, transparent);
+  backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to right, black, transparent 12%, transparent 88%, black),
+    linear-gradient(to bottom, black, transparent 34%, transparent 78%, black);
+}
+
+.copy {
+  padding: 38px 24px 64px;
+  text-align: center;
+  background: linear-gradient(var(--glass-background), color-mix(in srgb, var(--glass-background) 88%, transparent) 65%, transparent);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--site-orange-emphasis);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.copy h1 {
+  margin: 0 0 12px;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.intro {
+  margin: 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 150ms, border-color 150ms;
+}
+
+.actions .primary {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+:global(html[data-theme='dark']) .actions .primary {
+  color: #111111;
+}
+
+.actions .secondary {
+  background: color-mix(in srgb, var(--glass-popover) 70%, transparent);
+  color: var(--glass-foreground);
+  backdrop-filter: blur(8px);
+}
+
+.actions a:hover,
+.destination:hover {
+  border-color: var(--site-orange-emphasis);
+  outline: 1px solid var(--site-orange-emphasis);
+  text-decoration: none;
+}
+
+.caption {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--ifm-font-color-secondary);
+  font-size: 11px;
+}
+
+.credits a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.explore {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 32px 56px;
+}
+
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.sectionHeading p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ifm-font-color-secondary);
+}
+
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.destination {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--ifm-color-primary);
+}
+
+.destination h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 6px;
+  font-size: 17px;
+  color: var(--glass-foreground);
+}
+
+.destination p {
+  margin: 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 14px;
+}
+
+.soon {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--site-orange-emphasis);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 470px;
+    height: calc(100svh - 180px);
+    max-height: 620px;
+  }
+
+  .copy {
+    padding-top: 28px;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+  }
+
+  .intro {
+    font-size: 15px;
+  }
+
+  .map {
+    object-position: 51% center;
+  }
+
+  .caption {
+    left: 20px;
+    right: 20px;
+    font-size: 10px;
+  }
+
+  .explore {
+    padding: 24px 20px 36px;
+  }
+
+  .destinations {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actions a {
+    transition: none;
+  }
+}

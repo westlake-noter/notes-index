@@ -45,7 +45,13 @@ src/
   css/
     custom.css
     glass.css
+  pages/
+    index.js
+    index.module.css
   theme/
+static/img/
+  campus-light.webp
+  campus-dark.webp
 sidebars.js
 docusaurus.config.js
 .github/workflows/pages.yml
@@ -53,6 +59,13 @@ docusaurus.config.js
 
 `sidebars.js` scans the Notes and Tools directories automatically. You do not
 need to register individual pages there.
+
+The homepage lives at `/`; the course directory lives at `/notes/`. Edit
+`src/pages/index.js` and its CSS module for the homepage skeleton. The campus
+map uses Docusaurus `ThemedImage` to follow the selected theme. When replacing
+the maps, retain their attribution and keep both theme variants at matching
+dimensions. The current WebP assets were converted from the user-supplied
+3543 x 1476 PNG exports at quality 90 without resizing.
 
 ## Add or Update a Course
 

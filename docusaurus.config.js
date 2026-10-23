@@ -80,7 +80,7 @@ const config = {
         {
           title: 'Index',
           items: [
-            { label: 'Course Notes', to: '/' },
+            { label: 'Course Notes', to: '/notes' },
             { label: 'Tools', to: '/tools' },
           ],
         },
