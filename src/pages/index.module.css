@@ -194,7 +194,7 @@
 
 @media (max-width: 600px) {
   .hero {
-    min-height: 470px;
+    min-height: 400px;
     height: calc(100svh - 180px);
     max-height: 620px;
   }
@@ -219,6 +219,10 @@
     left: 20px;
     right: 20px;
     font-size: 10px;
+  }
+
+  .caption > span:first-child {
+    display: none;
   }
 
   .explore {
