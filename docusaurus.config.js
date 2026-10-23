@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 const config = {
   title: 'Westlake Noter',
   tagline: 'Course Notes Index',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/westlake-logo.svg',
   url: 'https://westlake-noter.github.io',
   baseUrl: '/notes-index/',
   organizationName: 'westlake-noter',
@@ -53,7 +53,7 @@ const config = {
       title: 'Westlake Noter',
       logo: {
         alt: 'Westlake Noter',
-        src: 'img/logo.svg',
+        src: 'img/westlake-logo.svg',
       },
       items: [
         {
