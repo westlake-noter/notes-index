@@ -52,6 +52,12 @@ const config = {
           label: 'Course Notes',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'toolsSidebar',
+          position: 'left',
+          label: 'Tools',
+        },
+        {
           href: 'https://github.com/westlake-noter/notes-index',
           label: 'GitHub',
           position: 'right',
@@ -64,6 +70,7 @@ const config = {
           title: 'Index',
           items: [
             { label: 'Course Notes', to: '/' },
+            { label: 'Tools', to: '/tools' },
           ],
         },
         {

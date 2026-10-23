@@ -23,6 +23,7 @@ const sidebars = {
       items: ['notes/chemistry/general-chemistry'],
     },
   ],
+  toolsSidebar: ['tools'],
 };
 
 export default sidebars;

@@ -29,6 +29,8 @@ The site currently uses English for all interface text and course summaries,
 with GitHub-inspired light and dark styles in `src/css/custom.css`.
 The color mode follows the system on first visit. The toggle switches only
 between light and dark, and remembers the manual preference.
+The top navigation separates Course Notes and Tools. `docs/tools.md` is the
+Tools placeholder; future tool pages belong in `toolsSidebar` in `sidebars.js`.
 
 站点地址：<https://westlake-noter.github.io/notes-index/>。
 
