@@ -38,15 +38,15 @@
       "sourceUrl": "https://github.com/JiamingShi-JsPhys/chem-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "e5aa330be35b1731c07779eedf7dccd31ab27a37",
-      "syncedAt": "2026-10-24T08:25:23.224Z",
+      "syncedAt": "2026-10-24T09:13:51.395Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:23.650Z"
+          "syncedAt": "2026-10-24T09:13:51.845Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:23.650Z"
+          "syncedAt": "2026-10-24T09:13:51.845Z"
         }
       }
     },
@@ -113,15 +113,15 @@
       "sourceUrl": "https://github.com/qwerasdasd1/Calculus-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "b3d384715a6f522edac2c4c269238133731742f8",
-      "syncedAt": "2026-10-24T08:25:25.003Z",
+      "syncedAt": "2026-10-24T09:13:53.253Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:25.411Z"
+          "syncedAt": "2026-10-24T09:13:53.738Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:25.411Z"
+          "syncedAt": "2026-10-24T09:13:53.738Z"
         }
       }
     },
@@ -163,11 +163,11 @@
       "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/README.md",
       "path": "README.md",
       "sha": "ed0fc6f4f14e9dcdd331d4993c661faf501f93d9",
-      "syncedAt": "2026-10-24T08:25:26.643Z",
+      "syncedAt": "2026-10-24T09:13:55.053Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:27.035Z"
+          "syncedAt": "2026-10-24T09:13:55.553Z"
         },
         "license": {
           "status": "ready",
@@ -176,7 +176,7 @@
           "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE",
           "path": "LICENSE",
           "sha": "987697909c1582b6a9e30aed9dc6843645afbc34",
-          "syncedAt": "2026-10-24T08:25:27.405Z"
+          "syncedAt": "2026-10-24T09:13:55.895Z"
         }
       }
     },
@@ -233,15 +233,15 @@
       "sourceUrl": "https://github.com/qwerasdasd1/Linear-Algebra-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "533eec218b1b6a8eee732d3e02662c48147cb7e2",
-      "syncedAt": "2026-10-24T08:25:28.642Z",
+      "syncedAt": "2026-10-24T09:13:57.091Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:29.078Z"
+          "syncedAt": "2026-10-24T09:13:57.498Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:29.078Z"
+          "syncedAt": "2026-10-24T09:13:57.498Z"
         }
       }
     },
@@ -293,11 +293,11 @@
       "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/README.md",
       "path": "README.md",
       "sha": "4cc46bdb971b990e48b2c6626fb8f2711091bd9a",
-      "syncedAt": "2026-10-24T08:25:30.366Z",
+      "syncedAt": "2026-10-24T09:13:58.846Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:30.760Z"
+          "syncedAt": "2026-10-24T09:13:59.262Z"
         },
         "license": {
           "status": "ready",
@@ -306,7 +306,7 @@
           "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE",
           "path": "LICENSE",
           "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T08:25:31.120Z"
+          "syncedAt": "2026-10-24T09:13:59.653Z"
         }
       }
     },
@@ -358,11 +358,11 @@
       "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/README.md",
       "path": "README.md",
       "sha": "427afe14175afd95ee0ab3ef7db7b5bac5e89b27",
-      "syncedAt": "2026-10-24T08:25:32.377Z",
+      "syncedAt": "2026-10-24T09:14:00.971Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:32.783Z"
+          "syncedAt": "2026-10-24T09:14:01.388Z"
         },
         "license": {
           "status": "ready",
@@ -371,7 +371,7 @@
           "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE",
           "path": "LICENSE",
           "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T08:25:33.152Z"
+          "syncedAt": "2026-10-24T09:14:01.749Z"
         }
       }
     },
@@ -423,15 +423,15 @@
       "sourceUrl": "https://github.com/qwerasdasd1/PDE-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "8fc7f65f62927d522cb5ecac2f3a6d9cd099d7b3",
-      "syncedAt": "2026-10-24T08:25:34.746Z",
+      "syncedAt": "2026-10-24T09:14:03.249Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:35.157Z"
+          "syncedAt": "2026-10-24T09:14:03.756Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:35.157Z"
+          "syncedAt": "2026-10-24T09:14:03.756Z"
         }
       }
     },
@@ -463,11 +463,11 @@
       "sourceUrl": "https://github.com/westlake-noter/Probability-Theory/blob/main/README.md",
       "path": "README.md",
       "sha": "a426f629397fc9c610d4271c8562385202914c68",
-      "syncedAt": "2026-10-24T08:25:36.399Z",
+      "syncedAt": "2026-10-24T09:14:05.285Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T08:25:36.806Z"
+          "syncedAt": "2026-10-24T09:14:05.793Z"
         },
         "license": {
           "status": "ready",
@@ -476,7 +476,42 @@
           "sourceUrl": "https://github.com/westlake-noter/Probability-Theory/blob/main/LICENSE",
           "path": "LICENSE",
           "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T08:25:37.578Z"
+          "syncedAt": "2026-10-24T09:14:06.126Z"
+        }
+      }
+    },
+    "jietexue/quantum-mechanics-notes": {
+      "status": "ready",
+      "html": "<h1 id=\"readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025\">Quantum Mechanics Notes - Fall 2025</h1>\n<p>Personal study notes for the Fall 2025 Quantum Mechanics course at Westlake University, taught by <strong>Congjun Wu</strong>. The notes are written primarily in English using LaTeX.</p>\n<p>Instructor's lecture notes: <a href=\"https://wucj.lab.westlake.edu.cn/teach/QuantumMechanics2025/QuantumMechanics2025.html\">Quantum Mechanics 2025</a>.</p>\n<p><strong>These notes do not follow the order of the lectures.</strong> Topics, derivations, and computational methods are reorganized around my own understanding, with a strongly personal approach to selection, presentation, and emphasis. They are not official lecture notes or a complete record of the course, and may contain errors or omissions.</p>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-contents\">Contents</h2>\n<ul>\n<li><strong>Foundations:</strong> quantization, Dirac notation, operators, commutators, compatible observables, and uncertainty relations.</li>\n<li><strong>Wave functions and dynamics:</strong> position and momentum representations, the Schrodinger equation, probability density and current, exponential operators, and the Baker-Hausdorff lemma.</li>\n<li><strong>Model systems:</strong> analytical and algebraic treatments of the harmonic oscillator, coherent states, gauge transformations, Landau levels, and the quantum Hall effect.</li>\n<li><strong>Angular momentum and symmetries:</strong> rotations, spherical harmonics, angular momentum addition, Clebsch-Gordan coefficients, parity, and time reversal.</li>\n<li><strong>Approximation methods:</strong> time-independent and time-dependent perturbation theory, the interaction picture, the Landau-Zener model, adiabatic evolution, and the Berry phase.</li>\n<li><strong>Path integrals and scattering:</strong> propagators, Feynman's path integral formulation, and partial-wave scattering.</li>\n</ul>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-build\">Build</h2>\n<p>The main source is <code>quantum-mechanics-notes.tex</code>; illustrations and their SVG source are in <code>figures/</code>.</p>\n<p>With a TeX distribution containing the required packages and <code>latexmk</code> installed, run from the repository root:</p>\n<pre><code class=\"language-sh\">latexmk -pdf quantum-mechanics-notes.tex\n</code></pre>",
+      "toc": [
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025",
+          "value": "Quantum Mechanics Notes - Fall 2025",
+          "level": 1
+        },
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-contents",
+          "value": "Contents",
+          "level": 2
+        },
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-build",
+          "value": "Build",
+          "level": 2
+        }
+      ],
+      "sourceUrl": "https://github.com/JieteXue/quantum-mechanics-notes/blob/main/README.md",
+      "path": "README.md",
+      "sha": "bd39ecbadedbc4910713c50cc1b336e7c1680670",
+      "syncedAt": "2026-10-24T09:14:07.411Z",
+      "documents": {
+        "contributing": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T09:14:07.799Z"
+        },
+        "license": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T09:14:07.799Z"
         }
       }
     }

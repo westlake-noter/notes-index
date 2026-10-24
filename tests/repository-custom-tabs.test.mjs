@@ -6,6 +6,9 @@ import os from 'node:os';
 import remarkRepositoryTabs from '../plugins/remark-repository-tabs.mjs';
 import {loadLocalTabSources} from '../lib/local-repository-tabs.mjs';
 import {documentViews, resolveDocumentView} from '../src/features/repositories/documents.mjs';
+import {unified} from 'unified';
+import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
 
 const filename = 'content/repository-tabs/guide.md';
 const tab = {id: 'guide', label: 'Reading Guide', file: filename};
@@ -13,6 +16,38 @@ const sources = {[filename]: '# Guide\n\n## Sequence\n[Overview](/notes/)\n![Map
 const file = (tabs) => ({data: {frontMatter: {
   githubRepositories: ['owner/repo'], repositoryTabs: tabs,
 }}});
+
+test('Quantum Mechanics TOC preserves all numbered entries and printed pages from release v1.0.0', async () => {
+  const tabFile = 'content/repository-tabs/quantum-mechanics-toc.md';
+  const sources = loadLocalTabSources();
+  const tree = unified().use(remarkParse).use(remarkGfm).parse(sources[tabFile]);
+  const text = (node) => node.value ?? node.children?.map(text).join('') ?? '';
+  const headings = tree.children.filter((node) => node.type === 'heading' && node.depth === 2);
+  assert.deepEqual(headings.map((node) => Number(text(node).split('.')[0])),
+    Array.from({length: 18}, (_, i) => i + 1));
+  const pages = tree.children.filter((node) =>
+    node.type === 'paragraph' && text(node).startsWith('Printed page:'));
+  assert.deepEqual(pages.map((node) => Number(text(node).match(/\d+/)[0])),
+    [1, 1, 2, 2, 5, 5, 6, 6, 9, 11, 12, 13, 17, 21, 29, 32, 42, 44]);
+  const entries = tree.children.filter((node) => node.type === 'table')
+    .flatMap((table) => table.children.slice(1))
+    .map((row) => row.children.map(text));
+  assert.equal(entries.length, 36);
+  assert.deepEqual(entries.map(([number, , page]) => `${number}:${page}`), [
+    '4.1:2', '4.2:3', '8.1:7', '8.2:7', '8.3:8', '8.4:8', '8.5:8', '8.6:9',
+    '12.1:14', '12.2:15', '12.3:16', '12.4:17',
+    '13.1:17', '13.2:19', '13.2.1:19', '13.2.2:20',
+    '14.1:21', '14.2:22', '14.3:23', '14.4:25', '14.5:27', '14.6:28', '14.7:28', '14.7.1:29',
+    '15.1:29', '15.2:30', '15.3:32', '16.1:32', '16.2:34', '16.3:36', '16.4:38', '16.5:40',
+    '17.1:42', '17.2:43', '17.3:43', '18.1:45',
+  ]);
+  const data = file([{id: 'toc', label: 'TOC', file: tabFile}]);
+  await remarkRepositoryTabs({sources})(null, data);
+  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].toc.filter(({level}) => level === 2).length, 18);
+  const overview = await readFile(new URL('../docs/notes/physics/quantum-mechanics.md', import.meta.url), 'utf8');
+  assert.match(overview, /file: content\/repository-tabs\/quantum-mechanics-toc\.md/);
+  assert.match(overview, /https:\/\/github\.com\/JieteXue\/quantum-mechanics-notes/);
+});
 
 test('FAA keeps both complete volume outlines in its configured TOC tab, outside Overview', async () => {
   const overview = await readFile(new URL('../docs/notes/math/fundamental-algebra-analysis.md', import.meta.url), 'utf8');
