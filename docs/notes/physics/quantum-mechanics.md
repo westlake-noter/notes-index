@@ -6,8 +6,7 @@ sidebar_position: 1
 repositoryTabs:
   - id: toc
     label: TOC
-    layout: outline
-    file: content/repository-tabs/quantum-mechanics-toc.md
+    file: content/repository-tabs/quantum-mechanics.toc.json
 ---
 
 # Quantum Mechanics

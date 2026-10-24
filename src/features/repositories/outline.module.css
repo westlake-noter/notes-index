@@ -1,0 +1,90 @@
+.outline {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.outline h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.outline [id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 12px;
+}
+
+.chapter {
+  margin-top: 18px;
+}
+
+.chapter h2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 12px;
+  align-items: baseline;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.entries {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--site-border);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.entries li {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 38px;
+  gap: 4px;
+  align-items: baseline;
+  margin: 0;
+  padding: 6px 0 6px calc(14px + var(--outline-depth) * 10px);
+}
+
+.number {
+  color: var(--ifm-font-color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.page {
+  justify-self: end;
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.entries .page {
+  color: var(--ifm-font-color-secondary);
+}
+
+.entries li:hover {
+  background: color-mix(in srgb, var(--ifm-color-primary) 5%, transparent);
+  box-shadow: -1px 0 var(--site-orange-emphasis);
+}
+
+.page:hover {
+  color: var(--site-orange-emphasis);
+}
+
+.page:focus-visible {
+  outline: 2px solid var(--site-orange-emphasis);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .entries li {
+    padding-left: calc(8px + var(--outline-depth) * 8px);
+  }
+}

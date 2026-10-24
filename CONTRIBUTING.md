@@ -34,6 +34,7 @@ Open `http://localhost:3000/notes-index/`.
 content/
   repository-tabs/
     <custom-tab>.md
+    <course>.toc.json
 docs/
   notes/
     index.md
@@ -50,6 +51,7 @@ lib/
     documents.mjs
     sync.mjs
   local-repository-tabs.mjs
+  course-outline.mjs
 plugins/
   remark-repository-contributors.mjs
   remark-repository-tabs.mjs
@@ -94,6 +96,7 @@ need to register individual pages there.
 - `lib/github/`: repository URL extraction, GitHub endpoint clients,
   sanitized document rendering, and snapshot freshness/concurrency rules.
 - `lib/local-repository-tabs.mjs`: local custom-tab source discovery.
+- `lib/course-outline.mjs`: structured course-outline validation and heading IDs.
 - `plugins/`: remark adapters that attach repository metadata and custom tabs.
 - `scripts/`: command-line entry points. Keep reusable sync rules in
   `lib/github/sync.mjs`, not in the script.
@@ -295,14 +298,9 @@ All paths below are relative to this repository's root.
    `file` is the exact, case-sensitive path from the repository root, not a
    path relative to the course page.
 
-   For a PDF-style course outline, optionally add `layout: outline` to that
-   entry. Use numbered `##` chapter headings, followed by `Printed page: **1**.`,
-   and Markdown tables with Section / Topic / Printed Page columns for
-   subsections. This compact layout aligns page numbers without repeated
-   visible table headers. See
-   [Quantum Mechanics](docs/notes/physics/quantum-mechanics.md) and
-   [its outline](content/repository-tabs/quantum-mechanics-toc.md) for the
-   complete format. Omit `layout` for normal Markdown presentation.
+   For numbered PDF contents, use a `.toc.json` file instead of formatting
+   tables in Markdown; see **Structured Course Outlines** below. The file
+   extension selects the renderer. Do not add a `layout` setting.
 
 4. Run `npm start` to preview the course page and select the new tab.
    If the server is already running, stop and restart it after changing
@@ -319,7 +317,7 @@ All paths below are relative to this repository's root.
    ```
 
    Include both the course page configuration and its new content files in
-   the pull request. No changes to React, `sidebars.js`, or generated JSON
+   the pull request. No changes to React, `sidebars.js`, or `src/data/` snapshots
    are needed; local tabs do not require `npm run sync:repositories`.
 
 Tabs append after the four built-in tabs, in declaration order. Reorder the
@@ -329,7 +327,7 @@ Do not use the reserved IDs `overview`, `readme`, `contributing`, or `license`.
 Keep IDs stable after publishing so existing links continue to work.
 The course page must link to at least one GitHub repository.
 
-Use `.md` files under `content/repository-tabs/`; these are tab content, not
+Use `.md` or `.toc.json` files under `content/repository-tabs/`; these are tab content, not
 standalone routes or sidebar pages. Use ordinary Markdown, GFM tables, and
 KaTeX math, not MDX imports, React components, or interactive Mermaid blocks.
 HTML is sanitized and JavaScript is not executed.
@@ -345,6 +343,62 @@ Their content is shared across the page's repositories, not fetched per repo.
 MDX caches invalidate when the files change. Restart `npm start` after creating
 or changing these local tab files, since their sources are loaded with the site
 configuration. `npm run build` always picks up the latest local files.
+
+### Structured Course Outlines
+
+Keep outline data separate from presentation. Create a `.toc.json` file under
+`content/repository-tabs/` and point the course page's tab declaration to it:
+
+```yaml
+repositoryTabs:
+  - id: toc
+    label: TOC
+    file: content/repository-tabs/new-course.toc.json
+```
+
+The JSON contains metadata and one entry per numbered heading, in PDF order:
+
+```json
+{
+  "title": "Table of Contents",
+  "source": {
+    "label": "PDF v1.0.0",
+    "url": "https://example.com/notes.pdf",
+    "pageOffset": 3
+  },
+  "entries": [
+    {"number": "1", "title": "Foundations", "page": 1},
+    {"number": "1.1", "title": "States", "page": 2},
+    {"number": "1.1.1", "title": "Examples", "page": 3},
+    {"number": "2", "title": "Dynamics", "page": 5}
+  ]
+}
+```
+
+Replace the example URL with the verified PDF URL. `page` is a positive integer
+from the PDF's printed pagination. `pageOffset` is the nonnegative number added
+to a printed page to obtain its physical PDF page: if printed page 1 is PDF
+page 4, the offset is 3. The page links add the viewer fragment `#page=4`;
+whether a download link opens a viewer depends on the browser/GitHub response.
+
+`number` is a string, not a decimal number. Dot-separated numbers express
+hierarchy, including entries such as `"13.2.1"`. Main chapters start at `"1"`
+and proceed sequentially. Place children after their parent and inside the
+current chapter; numbers must be unique. Titles are plain text, not Markdown
+or HTML. There are no repeated table headers, page paragraphs, or CSS classes
+to maintain in the content file.
+
+The build parses JSON directly, validates numbers, source URLs, and pages,
+and generates the right-hand chapter TOC. `CourseOutline` handles layout and
+page links with React; this format bypasses the Markdown/HTML renderer entirely.
+Invalid JSON or an invalid hierarchy fails the build with `Invalid course outline`.
+Changing a title changes its generated anchor, just as it does in Markdown.
+
+See [Quantum Mechanics](docs/notes/physics/quantum-mechanics.md) and
+[its structured outline](content/repository-tabs/quantum-mechanics.toc.json).
+These files are hand-authored source data, unlike generated snapshots under
+`src/data/`. Restart `npm start` after edits, then run `npm test` and
+`npm run build`. Existing prose-based tabs can continue to use `.md`.
 
 Working example:
 [Fundamental Algebra and Analysis](docs/notes/math/fundamental-algebra-analysis.md)

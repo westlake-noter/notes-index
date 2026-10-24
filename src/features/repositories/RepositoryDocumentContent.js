@@ -2,6 +2,7 @@ import React from 'react';
 import AnimatedIcon from '@site/src/components/AnimatedIcon';
 import styles from './documents.module.css';
 import {documentViews} from './documents.mjs';
+import CourseOutline from './CourseOutline';
 
 export default function RepositoryDocumentContent({repositories, repository, documentData, view, onSelect}) {
   const label = documentData?.label ?? documentViews.find(({value}) => value === view)?.label ?? 'README';
@@ -19,7 +20,7 @@ export default function RepositoryDocumentContent({repositories, repository, doc
       )}
       <div className={styles.source}>
         <div>
-          <span className={styles.sourceName}>{documentData?.layout === 'outline' ? 'Course outline' : documentData?.path ?? label}</span>
+          <span className={styles.sourceName}>{documentData?.outline ? 'Course outline' : documentData?.path ?? label}</span>
           {documentData?.syncedAt && (
             <span>Last synced <time dateTime={documentData.syncedAt}>
               {new Date(documentData.syncedAt).toISOString().slice(0, 10)}
@@ -28,9 +29,9 @@ export default function RepositoryDocumentContent({repositories, repository, doc
         </div>
         <a href={sourceUrl}><AnimatedIcon name="github" size={16} /> View on GitHub</a>
       </div>
-      {ready ? (
+      {ready && documentData.outline ? <CourseOutline outline={documentData.outline} /> : ready ? (
         <div
-          className={`theme-doc-markdown markdown ${styles.body} ${documentData?.layout === 'outline' ? styles.outline : ''}`}
+          className={`theme-doc-markdown markdown ${styles.body}`}
           dangerouslySetInnerHTML={{__html: documentData.html}}
         />
       ) : (

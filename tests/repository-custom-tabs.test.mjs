@@ -6,9 +6,6 @@ import os from 'node:os';
 import remarkRepositoryTabs from '../plugins/remark-repository-tabs.mjs';
 import {loadLocalTabSources} from '../lib/local-repository-tabs.mjs';
 import {documentViews, resolveDocumentView} from '../src/features/repositories/documents.mjs';
-import {unified} from 'unified';
-import remarkParse from 'remark-parse';
-import remarkGfm from 'remark-gfm';
 
 const filename = 'content/repository-tabs/guide.md';
 const tab = {id: 'guide', label: 'Reading Guide', file: filename};
@@ -18,22 +15,17 @@ const file = (tabs) => ({data: {frontMatter: {
 }}});
 
 test('Quantum Mechanics TOC preserves all numbered entries and printed pages from release v1.0.0', async () => {
-  const tabFile = 'content/repository-tabs/quantum-mechanics-toc.md';
+  const tabFile = 'content/repository-tabs/quantum-mechanics.toc.json';
   const sources = loadLocalTabSources();
-  const tree = unified().use(remarkParse).use(remarkGfm).parse(sources[tabFile]);
-  const text = (node) => node.value ?? node.children?.map(text).join('') ?? '';
-  const headings = tree.children.filter((node) => node.type === 'heading' && node.depth === 2);
-  assert.deepEqual(headings.map((node) => Number(text(node).split('.')[0])),
+  const {entries: allEntries} = JSON.parse(sources[tabFile]);
+  const chapters = allEntries.filter(({number}) => !number.includes('.'));
+  assert.deepEqual(chapters.map(({number}) => Number(number)),
     Array.from({length: 18}, (_, i) => i + 1));
-  const pages = tree.children.filter((node) =>
-    node.type === 'paragraph' && text(node).startsWith('Printed page:'));
-  assert.deepEqual(pages.map((node) => Number(text(node).match(/\d+/)[0])),
+  assert.deepEqual(chapters.map(({page}) => page),
     [1, 1, 2, 2, 5, 5, 6, 6, 9, 11, 12, 13, 17, 21, 29, 32, 42, 44]);
-  const entries = tree.children.filter((node) => node.type === 'table')
-    .flatMap((table) => table.children.slice(1))
-    .map((row) => row.children.map(text));
+  const entries = allEntries.filter(({number}) => number.includes('.'));
   assert.equal(entries.length, 36);
-  assert.deepEqual(entries.map(([number, , page]) => `${number}:${page}`), [
+  assert.deepEqual(entries.map(({number, page}) => `${number}:${page}`), [
     '4.1:2', '4.2:3', '8.1:7', '8.2:7', '8.3:8', '8.4:8', '8.5:8', '8.6:9',
     '12.1:14', '12.2:15', '12.3:16', '12.4:17',
     '13.1:17', '13.2:19', '13.2.1:19', '13.2.2:20',
@@ -41,12 +33,15 @@ test('Quantum Mechanics TOC preserves all numbered entries and printed pages fro
     '15.1:29', '15.2:30', '15.3:32', '16.1:32', '16.2:34', '16.3:36', '16.4:38', '16.5:40',
     '17.1:42', '17.2:43', '17.3:43', '18.1:45',
   ]);
-  const data = file([{id: 'toc', label: 'TOC', file: tabFile, layout: 'outline'}]);
+  const data = file([{id: 'toc', label: 'TOC', file: tabFile}]);
   await remarkRepositoryTabs({sources})(null, data);
-  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].layout, 'outline');
+  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].outline.chapters.length, 18);
+  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].outline.chapters[13].id,
+    'toc-owner-repo-14-angular-momentum');
+  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].html, undefined);
   assert.equal(data.data.frontMatter.repositoryTabDocuments[0].toc.filter(({level}) => level === 2).length, 18);
   const overview = await readFile(new URL('../docs/notes/physics/quantum-mechanics.md', import.meta.url), 'utf8');
-  assert.match(overview, /file: content\/repository-tabs\/quantum-mechanics-toc\.md/);
+  assert.match(overview, /file: content\/repository-tabs\/quantum-mechanics\.toc\.json/);
   assert.match(overview, /https:\/\/github\.com\/JieteXue\/quantum-mechanics-notes/);
 });
 
@@ -107,7 +102,7 @@ test('custom tab URLs and scoped fragments resolve without changing builtin tab 
   assert.equal(documentViews.length, 4);
 });
 
-test('loads only local Markdown tab sources and reflects changes for MDX cache invalidation', async () => {
+test('loads local Markdown and outline JSON sources, reflecting changes for cache invalidation', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'repository-tabs-'));
   try {
     assert.deepEqual(loadLocalTabSources(root), {});
@@ -117,6 +112,9 @@ test('loads only local Markdown tab sources and reflects changes for MDX cache i
     assert.deepEqual(loadLocalTabSources(root), {[filename]: '# First'});
     await writeFile(path.join(root, filename), '# Updated');
     assert.deepEqual(loadLocalTabSources(root), {[filename]: '# Updated'});
+    await writeFile(path.join(root, 'content/repository-tabs/example.toc.json'), '{"title":"Contents"}');
+    await writeFile(path.join(root, 'content/repository-tabs/ignored.json'), '{}');
+    assert.equal(Object.keys(loadLocalTabSources(root)).length, 2);
   } finally {
     await rm(root, {recursive: true, force: true});
   }

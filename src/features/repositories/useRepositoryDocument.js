@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {useHistory, useLocation} from '@docusaurus/router';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import snapshot from '@site/src/data/repository-documents.json';
@@ -15,6 +16,14 @@ export default function useRepositoryDocument(repositories, customDocuments = []
   const {view, repository} = resolveDocumentView(
     repositories, isBrowser ? location.search : '', isBrowser ? location.hash : '', views,
   );
+  useEffect(() => {
+    if (!isBrowser || view === 'overview' || !location.hash) return undefined;
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return undefined; }
+    // Query-selected headings do not exist in the static Overview HTML.
+    const frame = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
+    return () => cancelAnimationFrame(frame);
+  }, [isBrowser, view, repository, location.hash]);
   const select = (nextView, nextRepository = repository) => {
     const search = new URLSearchParams(location.search);
     search.delete('view');
