@@ -31,6 +31,9 @@ Open `http://localhost:3000/notes-index/`.
 ## Repository Layout
 
 ```text
+content/
+  repository-tabs/
+    <custom-tab>.md
 docs/
   notes/
     index.md
@@ -141,13 +144,14 @@ Repository links follow Fumadocs's compact GitHub Info presentation, including
 stars and forks when available. Statistics and contributor lists are snapshots,
 not live counters.
 
-Pages builds run `npm run sync:contributors` using the workflow's read-only token
-before building. Local `npm run build` and `npm start` use the saved snapshot in
-`src/data/repository-contributors.json` and do not need network access.
+Pages builds run `npm run sync:repositories` using the workflow's read-only token
+before building. Local `npm run build` and `npm start` use saved snapshots in
+`src/data/repository-contributors.json` and `src/data/repository-documents.json`
+and do not need network access to GitHub's API.
 To refresh it locally, run:
 
 ```sh
-npm run sync:contributors
+npm run sync:repositories
 npm test
 npm run build
 ```
@@ -157,6 +161,80 @@ Never commit a token. Failed requests retain the previous snapshot; new
 repositories without data show a link to GitHub's contributors page instead.
 Changes on external repositories become visible after the next sync and site
 deployment; they do not update live in the visitor's browser.
+
+### Repository Documents
+
+Pages linking to repositories have four tabs: Overview, README, Contributing,
+and License. Overview remains the default and
+contains our curated course introduction. README displays the upstream document
+without duplicating it in the Overview. Keep detailed build steps and file
+listings upstream; keep the course summary and reading guidance in the Overview.
+
+The README tab includes its original path, source link, and actual last sync
+date. For pages linking to multiple repositories, a select control chooses the
+document. All tabs share repository statistics and contributors; desktop and
+mobile tables of contents follow the selected content. `?view=readme&repo=owner/name`
+(or `view=contributing` / `view=license`) and scoped heading fragments preserve
+the selected document after refreshing.
+
+`lib/github-documents.mjs` fetches the default README through GitHub's REST API,
+renders GFM and KaTeX with unified, and caches sanitized HTML and its heading
+tree. Relative links point to GitHub files and relative images to raw files.
+README HTML is sanitized before trusted KaTeX output is added; it is never
+compiled as MDX or executed as JavaScript. Some embedded widgets and custom
+HTML are deliberately removed. Images still load from their original hosts.
+
+Contributing and License display separate upstream files, discovered at the
+repository root or under `.github/` or `docs/`, with case-insensitive filenames.
+Root files take precedence. README's existing contribution/license sections
+remain untouched; they are never extracted into the other tabs. Missing
+independent files get their own empty state. Each document has its own cache,
+sync timestamp, source link, and scoped heading IDs.
+
+### Custom Document Tabs
+
+Add local `.md` files under `content/repository-tabs/` and declare them in the
+course page's frontmatter. These files are not routes and do not appear in the
+sidebar. No React changes or GitHub requests are needed.
+
+```yaml
+repositoryTabs:
+  - id: reading-guide
+    label: Reading Guide
+    file: content/repository-tabs/reading-guide.md
+  - id: exercises
+    label: Exercises
+    file: content/repository-tabs/exercises.md
+```
+
+Tabs append after the four built-in tabs, in declaration order. IDs must be
+unique lowercase identifiers (letters, numbers, hyphens) and cannot replace
+`overview`, `readme`, `contributing`, or `license`. The page must link to at
+least one GitHub repository. Invalid or missing file declarations fail the
+build with an actionable error rather than silently dropping content.
+
+Local Markdown shares the sanitized GFM/KaTeX renderer and dynamic TOC. Its
+headings have scoped anchors, and `?view=reading-guide` survives refresh.
+Use site-root links such as `/notes/math/` and `/img/example.png`; the renderer
+adds the deployed `baseUrl`. Full external URLs remain unchanged. Custom
+documents have a source link to this site's repository and no GitHub sync date.
+Their content is shared across the page's repositories, not fetched per repo.
+
+`plugins/remark-repository-tabs.mjs` embeds the documents at build time.
+`loadLocalTabSources()` includes source text in remark options so production
+MDX caches invalidate when the files change. Restart `npm start` after creating
+or changing these local tab files, since their sources are loaded with the site
+configuration. `npm run build` always picks up the latest local files.
+
+The Fundamental Algebra and Analysis page is a working example: its
+`repositoryTabs` declaration adds a **TOC** tab backed by
+`content/repository-tabs/fundamental-algebra-analysis-toc.md`. Both volume
+outlines live there; its Overview contains only the course introduction.
+
+On a transient fetch failure, keep the saved README and its original sync time,
+marked as a cached copy. A confirmed missing README gets an explicit empty
+state; unsynced repositories link to GitHub instead. `npm run sync:contributors`
+remains an alias for the combined sync command.
 
 ## Add a Subject
 

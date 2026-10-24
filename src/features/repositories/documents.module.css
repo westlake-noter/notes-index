@@ -1,0 +1,102 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin: 16px 0 24px;
+  border-bottom: 1px solid var(--site-border);
+}
+
+.tabs button {
+  appearance: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  padding: 10px 0;
+  color: var(--ifm-font-color-secondary);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tabs button[aria-selected='true'] {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+.tabs button:hover {
+  color: var(--site-orange-emphasis);
+  border-bottom-color: var(--site-orange-emphasis);
+}
+
+.readme,
+.body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--site-border);
+  font-size: 12px;
+  color: var(--ifm-font-color-secondary);
+}
+
+.source > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sourceName {
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.repositorySelect {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.repositorySelect select {
+  max-width: 100%;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--site-border);
+  border-radius: 6px;
+  background: var(--glass-popover);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+}
+
+.body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.body [id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+.body pre {
+  overflow: auto;
+}
+
+.empty {
+  color: var(--ifm-font-color-secondary);
+}

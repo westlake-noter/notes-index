@@ -38,8 +38,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-
       - run: npm test
-      - name: Sync linked repository contributors
-        run: npm run sync:contributors
+      - name: Sync linked repository contributors and documents
+        run: npm run sync:repositories
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - run: npm run build
