@@ -35,7 +35,7 @@ export default function useNavbarExpansion() {
         ...options,
       });
       setCompact(state.compact);
-      if (options.expand) {
+      if (options.expand && options.focusNavigation) {
         left.querySelector('.navbar__link')?.focus({preventScroll: true});
       }
     };
@@ -74,5 +74,12 @@ export default function useNavbarExpansion() {
     controller.current?.({reset: true});
   }, [pathname]);
 
-  return {compact, expand: () => controller.current?.({expand: true})};
+  return {
+    compact,
+    expand: (event) => controller.current?.({
+      expand: true,
+      // Pointer activation must not focus or animate an unrelated link.
+      focusNavigation: event?.detail === 0,
+    }),
+  };
 }

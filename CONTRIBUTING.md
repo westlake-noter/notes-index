@@ -268,6 +268,9 @@ The implementation lives in `src/features/navigation/`; theme files only connect
 the provider, links, and custom item to Docusaurus. The desktop GitHub action is
 an icon-only 32px link with a tooltip and accessible name; the mobile drawer
 retains its text label.
+Only keyboard activation of the expand button moves focus to the first
+navigation link. Pointer activation must not focus another link or trigger its
+focus animation. Check both input methods after a fresh page load.
 Keep hidden left-hand links inert, respect reduced motion, and test both sides
 of the 997px desktop breakpoint when editing this behavior.
 
