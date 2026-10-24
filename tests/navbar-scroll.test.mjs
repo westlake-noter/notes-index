@@ -35,6 +35,25 @@ test('restored scroll and route/viewport changes reset manual expansion', () => 
   assert.equal(update(expanded, 0, {reset: true}).compact, false);
 });
 
+test('manual expansion stays open while scrolling upward within 160px of the top', () => {
+  let state = update(undefined, 160, {expand: true});
+  for (const position of [159, 120, 120, 40, 1, 0]) {
+    state = update(state, position);
+    assert.equal(state.compact, false, `should stay expanded at ${position}px`);
+  }
+  assert.equal(update(state, 1).compact, true);
+});
+
+test('near-top buffer does not expand compact navigation or override downward scroll', () => {
+  const compact = update(undefined, 120);
+  assert.equal(update(compact, 100).compact, true);
+  const expanded = update(compact, 120, {expand: true});
+  assert.equal(update(expanded, 121).compact, true);
+  assert.equal(update(expanded, 119, {reset: true}).compact, true);
+  assert.equal(update(update(undefined, 200, {expand: true}), 160).compact, false);
+  assert.equal(update(update(undefined, 200, {expand: true}), 161).compact, true);
+});
+
 test('mobile never compacts and switching back to desktop resyncs position', () => {
   const mobile = update(undefined, 300, {desktop: false});
   assert.equal(mobile.compact, false);

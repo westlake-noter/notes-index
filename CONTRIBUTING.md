@@ -235,6 +235,9 @@ supplied Westlake logo; keep orange text contrast-adjusted in both color modes.
 or the mobile drawer. Away from the page top, scrolling in either direction
 contracts the surface toward the right actions. The expand button opens it
 until the next actual page scroll; returning to the top opens it automatically.
+Within 160px of the top, an already expanded navbar stays open while scrolling
+upward, avoiding a collapse/expand flash. Downward scrolling still contracts it,
+and this buffer never opens an already compact navbar.
 The button uses Docusaurus's custom navbar item API. Scroll state is tested in
 `tests/navbar-scroll.test.mjs`; no scroll-direction dependency is needed.
 Keep hidden left-hand links inert, respect reduced motion, and test both sides
