@@ -28,7 +28,8 @@ constrained follow-up sections, using native Docusaurus components instead of
 Next.js. Its campus maps are user-supplied terraink.app exports, with visible
 terraink.app and OpenStreetMap attribution retained on the page.
 
-`RepositoryContributors` follows the upstream linked-avatar presentation.
+`src/features/repositories/` follows the upstream linked-avatar presentation,
+sharing its avatar component between the homepage and document information rail.
 `lib/github-contributors.mjs` adapts the upstream fetcher, adding pagination,
 user deduplication, and static build-time snapshots. A remark plugin collects
 repository links from each document; the browser never receives an API token
@@ -38,7 +39,7 @@ is fetched by the sync script rather than React Server Components. The native
 Docusaurus document components are retained in an adapted MIT-licensed
 DocItem/Layout to place this information in the right-hand rail.
 
-`src/theme/TOC/index.js` adapts the block TOC's resize-cached item positions and
+`src/features/toc/useTableOfContents.js` adapts the block TOC's resize-cached item positions and
 animated `clip-path`. Its desktop heading observer adapts Fumadocs core's
 multi-anchor visibility and nearest-heading fallback. Docusaurus still renders
 the filtered heading tree; its single-active-item observer is disabled for this

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {activeHeadingIds} from '../src/theme/TOC/active-headings.mjs';
+import {activeHeadingIds} from '../src/features/toc/active-headings.mjs';
 
 const headings = [
   {id: 'first', top: -200},

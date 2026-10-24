@@ -45,6 +45,10 @@ src/
   css/
     custom.css
     glass.css
+  features/
+    navigation/
+    repositories/
+    toc/
   pages/
     index.js
     index.module.css
@@ -59,6 +63,26 @@ docusaurus.config.js
 
 `sidebars.js` scans the Notes and Tools directories automatically. You do not
 need to register individual pages there.
+
+### Code Boundaries
+
+- `src/features/navigation/`: navbar links, expansion controls, scroll state,
+  and the browser lifecycle hook. Pure scroll rules live in `scroll-state.mjs`.
+- `src/features/toc/`: heading visibility, following highlight, and TOC rendering.
+- `src/features/repositories/`: document repository information and the homepage
+  contributor section, sharing `ContributorAvatars` and one CSS module.
+- `src/theme/`: Docusaurus adapters and document/sidebar placement. Keep feature
+  behavior in `features/`, not in theme registration files.
+- `src/components/`: standalone reusable visuals such as icons and the campus map.
+- `src/css/`: shared typography, color tokens, and Glass layout selectors;
+  feature-specific styles stay beside their components.
+- `lib/`, `plugins/`, and `scripts/`: GitHub/Markdown processing, the remark
+  integration, and the build-time snapshot command respectively.
+
+Import feature entry points from pages and theme adapters. Do not import a
+theme adapter from a feature; use native `@theme-original` components when
+wrapping Docusaurus, or native primitives such as `@theme/TOCItems`. Keep pure
+rules independent of React so `npm test` can cover them directly.
 
 The homepage lives at `/`; the course directory lives at `/notes/`. Edit
 `src/pages/index.js` and its CSS module for the homepage skeleton. The campus
@@ -222,7 +246,7 @@ drawer. The desktop sidebar wrapper only adds the shared `Logo` component.
 Keep the logo transparent, preserve the two-state theme toggle, and check
 sidebar scrolling and mobile navigation after layout changes.
 
-The desktop `src/theme/TOC/` reuses Docusaurus's heading tree and Fumadocs's
+The desktop `src/features/toc/` reuses Docusaurus's heading tree and Fumadocs's
 multi-anchor observer and block highlight algorithm. All headings visible below
 the navbar are highlighted together; when none are visible, the nearest heading
 remains active. The desktop single-item Docusaurus highlight is disabled so it
@@ -240,6 +264,10 @@ upward, avoiding a collapse/expand flash. Downward scrolling still contracts it,
 and this buffer never opens an already compact navbar.
 The button uses Docusaurus's custom navbar item API. Scroll state is tested in
 `tests/navbar-scroll.test.mjs`; no scroll-direction dependency is needed.
+The implementation lives in `src/features/navigation/`; theme files only connect
+the provider, links, and custom item to Docusaurus. The desktop GitHub action is
+an icon-only 32px link with a tooltip and accessible name; the mobile drawer
+retains its text label.
 Keep hidden left-hand links inert, respect reduced motion, and test both sides
 of the 997px desktop breakpoint when editing this behavior.
 

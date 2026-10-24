@@ -1,0 +1,16 @@
+@media (min-width: 997px) {
+  .github:global(.navbar__link) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+
+  .github .label,
+  .github > svg {
+    display: none;
+  }
+}

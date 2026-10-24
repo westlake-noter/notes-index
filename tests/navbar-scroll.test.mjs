@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {updateNavbarState} from '../src/theme/Navbar/Layout/scroll-state.mjs';
+import {updateNavbarState} from '../src/features/navigation/scroll-state.mjs';
 
 const update = (previous, scrollY, options = {}) =>
   updateNavbarState(previous, {scrollY, desktop: true, ...options});

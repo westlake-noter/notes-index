@@ -155,93 +155,6 @@ html[data-theme='dark'] {
   outline-color: var(--site-orange-emphasis);
 }
 
-.glass-toc {
-  position: sticky;
-  top: calc(var(--ifm-navbar-height) + 16px);
-  display: flex;
-  flex-direction: column;
-  max-height: calc(100dvh - var(--ifm-navbar-height) - 32px);
-  min-height: 0;
-  font-size: 13px;
-}
-
-.glass-toc-title {
-  color: var(--ifm-font-color-secondary);
-  font-size: 13px;
-  font-weight: 500;
-}
-
-/* Fumadocs TOCScrollArea's 16px fade and block.tsx's moving gradient. */
-.glass-toc-scroll {
-  min-height: 0;
-  padding: 12px 0;
-  overflow-x: clip;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: none;
-  mask-image: linear-gradient(
-    to bottom, transparent, white 16px, white calc(100% - 16px), transparent
-  );
-}
-
-.glass-toc-tree {
-  position: relative;
-}
-
-.glass-toc-block {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(to right, var(--site-blue-tint), transparent);
-  clip-path: inset(0 0 100%);
-}
-
-.glass-toc-block[data-ready] {
-  transition: clip-path 300ms ease-out;
-}
-
-.glass-toc-list,
-.glass-toc-list ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-}
-
-.glass-toc-list ul {
-  padding-left: 12px;
-}
-
-.glass-toc-list li {
-  margin: 0;
-}
-
-.glass-toc-list .table-of-contents__link {
-  position: relative;
-  display: block;
-  padding: 4px 8px;
-  color: var(--ifm-font-color-secondary);
-  line-height: 20px;
-  overflow-wrap: anywhere;
-  transition: color 150ms;
-}
-
-.glass-toc-list .table-of-contents__link--active {
-  color: var(--ifm-color-primary);
-}
-
-.glass-toc-list .table-of-contents__link:hover {
-  color: var(--site-orange-emphasis);
-  text-decoration: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glass-toc-block[data-ready],
-  .glass-toc-list .table-of-contents__link {
-    transition: none;
-  }
-}
-
 .theme-doc-markdown h1 {
   font-size: 28px;
 }
@@ -383,10 +296,6 @@ html[data-theme='dark'] {
 }
 
 @media (max-width: 996px) {
-  .glass-toc {
-    display: none;
-  }
-
   .navbar__title {
     font-size: 14px;
   }
