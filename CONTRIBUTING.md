@@ -257,6 +257,15 @@ All paths below are relative to this repository's root.
    `file` is the exact, case-sensitive path from the repository root, not a
    path relative to the course page.
 
+   For a PDF-style course outline, optionally add `layout: outline` to that
+   entry. Use numbered `##` chapter headings, followed by `Printed page: **1**.`,
+   and Markdown tables with Section / Topic / Printed Page columns for
+   subsections. This compact layout aligns page numbers without repeated
+   visible table headers. See
+   [Quantum Mechanics](docs/notes/physics/quantum-mechanics.md) and
+   [its outline](content/repository-tabs/quantum-mechanics-toc.md) for the
+   complete format. Omit `layout` for normal Markdown presentation.
+
 4. Run `npm start` to preview the course page and select the new tab.
    If the server is already running, stop and restart it after changing
    local tab files or their declarations. Check that the content, right-hand

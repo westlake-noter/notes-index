@@ -14,7 +14,8 @@ export default function remarkRepositoryTabs({sources = {}, baseUrl = '/', sourc
     for (const tab of tabs) {
       if (!tab || typeof tab.id !== 'string' || !/^[a-z][a-z0-9-]*$/.test(tab.id) || ids.has(tab.id)
         || typeof tab.label !== 'string' || !tab.label.trim()
-        || typeof tab.file !== 'string' || !Object.hasOwn(sources, tab.file)) {
+        || typeof tab.file !== 'string' || !Object.hasOwn(sources, tab.file)
+        || (tab.layout !== undefined && tab.layout !== 'outline')) {
         throw new Error('Invalid repositoryTabs entry: use a unique id, label, and existing .md file under content/repository-tabs/');
       }
       ids.add(tab.id);
@@ -25,7 +26,7 @@ export default function remarkRepositoryTabs({sources = {}, baseUrl = '/', sourc
         siteBaseUrl: baseUrl,
       };
       frontMatter.repositoryTabDocuments.push({
-        id: tab.id, label: tab.label.trim(), path: tab.file,
+        id: tab.id, label: tab.label.trim(), path: tab.file, layout: tab.layout,
         sourceUrl: source.sourceUrl, local: true, status: 'ready',
         ...await renderReadme(source, frontMatter.githubRepositories[0], tab.id),
       });

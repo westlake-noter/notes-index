@@ -19,7 +19,7 @@ export default function RepositoryDocumentContent({repositories, repository, doc
       )}
       <div className={styles.source}>
         <div>
-          <span className={styles.sourceName}>{documentData?.path ?? label}</span>
+          <span className={styles.sourceName}>{documentData?.layout === 'outline' ? 'Course outline' : documentData?.path ?? label}</span>
           {documentData?.syncedAt && (
             <span>Last synced <time dateTime={documentData.syncedAt}>
               {new Date(documentData.syncedAt).toISOString().slice(0, 10)}
@@ -30,7 +30,7 @@ export default function RepositoryDocumentContent({repositories, repository, doc
       </div>
       {ready ? (
         <div
-          className={`theme-doc-markdown markdown ${styles.body}`}
+          className={`theme-doc-markdown markdown ${styles.body} ${documentData?.layout === 'outline' ? styles.outline : ''}`}
           dangerouslySetInnerHTML={{__html: documentData.html}}
         />
       ) : (

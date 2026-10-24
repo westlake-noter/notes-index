@@ -1,10 +1,8 @@
 # Table of Contents
 
-Transcribed from the two Contents pages (i and ii) of the
-[v1.0.0 PDF](https://github.com/JieteXue/quantum-mechanics-notes/releases/download/v1.0.0/quantum-mechanics-notes.pdf).
-Numbering, chapter order, and subsection titles follow that PDF, not the
-README's topic summary. Page references below are **printed page numbers**:
-printed page 1 is the fourth PDF page, after the title and two contents pages.
+18 chapters · [PDF v1.0.0](https://github.com/JieteXue/quantum-mechanics-notes/releases/download/v1.0.0/quantum-mechanics-notes.pdf)
+
+Page numbers follow the PDF's printed pagination (page 1 is PDF page 4).
 
 ## 1. Quantization
 

@@ -41,8 +41,9 @@ test('Quantum Mechanics TOC preserves all numbered entries and printed pages fro
     '15.1:29', '15.2:30', '15.3:32', '16.1:32', '16.2:34', '16.3:36', '16.4:38', '16.5:40',
     '17.1:42', '17.2:43', '17.3:43', '18.1:45',
   ]);
-  const data = file([{id: 'toc', label: 'TOC', file: tabFile}]);
+  const data = file([{id: 'toc', label: 'TOC', file: tabFile, layout: 'outline'}]);
   await remarkRepositoryTabs({sources})(null, data);
+  assert.equal(data.data.frontMatter.repositoryTabDocuments[0].layout, 'outline');
   assert.equal(data.data.frontMatter.repositoryTabDocuments[0].toc.filter(({level}) => level === 2).length, 18);
   const overview = await readFile(new URL('../docs/notes/physics/quantum-mechanics.md', import.meta.url), 'utf8');
   assert.match(overview, /file: content\/repository-tabs\/quantum-mechanics-toc\.md/);
@@ -89,6 +90,7 @@ test('rejects duplicate/reserved IDs, unknown files, invalid labels, and missing
   for (const tabs of [
     [{...tab, id: 'readme'}], [tab, tab], [{...tab, id: undefined}],
     [{...tab, label: ''}], [{...tab, file: '../private.md'}],
+    [{...tab, layout: 'unknown'}],
   ]) {
     await assert.rejects(transform(null, file(tabs)), /Invalid repositoryTabs/);
   }
