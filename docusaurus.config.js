@@ -15,6 +15,16 @@ const config = {
   organizationName: 'westlake-noter',
   projectName: 'notes-index',
   onBrokenLinks: 'throw',
+  future: {
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      gitEagerVcs: true,
+    },
+  },
   markdown: {
     mermaid: true,
     hooks: { onBrokenMarkdownLinks: 'throw' },

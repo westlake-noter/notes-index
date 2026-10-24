@@ -11,6 +11,11 @@ on:
     paths-ignore:
       - '*.md'
   workflow_dispatch:
+    inputs:
+      refresh_repositories:
+        description: Refresh upstream repository snapshots even when cached
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -29,20 +34,45 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
-      - name: Restore Webpack build cache
-        uses: actions/cache@v4
+      - run: npm ci --no-audit --no-fund
+      - name: Restore compilation cache
+        uses: actions/cache/restore@v4
+        id: compilation-cache
         with:
-          path: node_modules/.cache/webpack
-          key: ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-${{ github.sha }}
+          path: node_modules/.cache
+          key: ${{ runner.os }}-${{ runner.arch }}-node22-build-v2-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-
+            ${{ runner.os }}-${{ runner.arch }}-node22-build-v2-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-
+      - name: Restore repository snapshots
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/repositories
+          key: repository-snapshots-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: repository-snapshots-v1-
       - run: npm test
       - name: Sync linked repository contributors and documents
         run: npm run sync:repositories
+        if: ${{ !inputs.refresh_repositories }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Force refresh linked repositories
+        if: ${{ inputs.refresh_repositories }}
+        run: npm run sync:repositories -- --force
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - run: npm run build
+      - name: Save repository snapshots
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/repositories
+          key: repository-snapshots-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Save compilation cache
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.compilation-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: node_modules/.cache
+          key: ${{ steps.compilation-cache.outputs.cache-primary-key }}
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:

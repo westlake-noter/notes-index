@@ -30,7 +30,7 @@ terraink.app and OpenStreetMap attribution retained on the page.
 
 `src/features/repositories/` follows the upstream linked-avatar presentation,
 sharing its avatar component between the homepage and document information rail.
-`lib/github-contributors.mjs` adapts the upstream fetcher, adding pagination,
+`lib/github/contributors.mjs` adapts the upstream fetcher, adding pagination,
 user deduplication, and static build-time snapshots. A remark plugin collects
 repository links from each document; the browser never receives an API token
 or makes GitHub API requests. Avatar images are loaded from GitHub's avatar CDN.

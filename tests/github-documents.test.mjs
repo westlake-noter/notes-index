@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fetchReadme, renderReadme, syncReadme, syncSupportingDocuments} from '../lib/github-documents.mjs';
+import {fetchReadme, renderReadme, syncReadme, syncSupportingDocuments} from '../lib/github/documents.mjs';
 
 const source = {
   path: 'docs/README.md',

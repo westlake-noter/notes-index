@@ -38,15 +38,50 @@
       "sourceUrl": "https://github.com/JiamingShi-JsPhys/chem-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "e5aa330be35b1731c07779eedf7dccd31ab27a37",
-      "syncedAt": "2026-10-24T09:13:51.395Z",
+      "syncedAt": "2026-10-24T11:57:08.935Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:51.845Z"
+          "syncedAt": "2026-10-24T11:57:08.918Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:51.845Z"
+          "syncedAt": "2026-10-24T11:57:08.918Z"
+        }
+      }
+    },
+    "jietexue/quantum-mechanics-notes": {
+      "status": "ready",
+      "html": "<h1 id=\"readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025\">Quantum Mechanics Notes - Fall 2025</h1>\n<p>Personal study notes for the Fall 2025 Quantum Mechanics course at Westlake University, taught by <strong>Congjun Wu</strong>. The notes are written primarily in English using LaTeX.</p>\n<p>Instructor's lecture notes: <a href=\"https://wucj.lab.westlake.edu.cn/teach/QuantumMechanics2025/QuantumMechanics2025.html\">Quantum Mechanics 2025</a>.</p>\n<p><strong>These notes do not follow the order of the lectures.</strong> Topics, derivations, and computational methods are reorganized around my own understanding, with a strongly personal approach to selection, presentation, and emphasis. They are not official lecture notes or a complete record of the course, and may contain errors or omissions.</p>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-contents\">Contents</h2>\n<ul>\n<li><strong>Foundations:</strong> quantization, Dirac notation, operators, commutators, compatible observables, and uncertainty relations.</li>\n<li><strong>Wave functions and dynamics:</strong> position and momentum representations, the Schrodinger equation, probability density and current, exponential operators, and the Baker-Hausdorff lemma.</li>\n<li><strong>Model systems:</strong> analytical and algebraic treatments of the harmonic oscillator, coherent states, gauge transformations, Landau levels, and the quantum Hall effect.</li>\n<li><strong>Angular momentum and symmetries:</strong> rotations, spherical harmonics, angular momentum addition, Clebsch-Gordan coefficients, parity, and time reversal.</li>\n<li><strong>Approximation methods:</strong> time-independent and time-dependent perturbation theory, the interaction picture, the Landau-Zener model, adiabatic evolution, and the Berry phase.</li>\n<li><strong>Path integrals and scattering:</strong> propagators, Feynman's path integral formulation, and partial-wave scattering.</li>\n</ul>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-build\">Build</h2>\n<p>The main source is <code>quantum-mechanics-notes.tex</code>; illustrations and their SVG source are in <code>figures/</code>.</p>\n<p>With a TeX distribution containing the required packages and <code>latexmk</code> installed, run from the repository root:</p>\n<pre><code class=\"language-sh\">latexmk -pdf quantum-mechanics-notes.tex\n</code></pre>",
+      "toc": [
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025",
+          "value": "Quantum Mechanics Notes - Fall 2025",
+          "level": 1
+        },
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-contents",
+          "value": "Contents",
+          "level": 2
+        },
+        {
+          "id": "readme-jietexue-quantum-mechanics-notes-build",
+          "value": "Build",
+          "level": 2
+        }
+      ],
+      "sourceUrl": "https://github.com/JieteXue/quantum-mechanics-notes/blob/main/README.md",
+      "path": "README.md",
+      "sha": "bd39ecbadedbc4910713c50cc1b336e7c1680670",
+      "syncedAt": "2026-10-24T11:57:09.053Z",
+      "documents": {
+        "contributing": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T11:57:09.379Z"
+        },
+        "license": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T11:57:09.379Z"
         }
       }
     },
@@ -113,70 +148,15 @@
       "sourceUrl": "https://github.com/qwerasdasd1/Calculus-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "b3d384715a6f522edac2c4c269238133731742f8",
-      "syncedAt": "2026-10-24T09:13:53.253Z",
+      "syncedAt": "2026-10-24T11:57:09.399Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:53.738Z"
+          "syncedAt": "2026-10-24T11:57:09.381Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:53.738Z"
-        }
-      }
-    },
-    "westlake-noter/faa-lecture-notes-2025fall-2026spring": {
-      "status": "ready",
-      "html": "<h1 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-fundamental-algebra-and-analysis\">Fundamental Algebra and Analysis</h1>\n<p>This repository archives the source files for the <strong>Fundamental Algebra and Analysis</strong> course notes.</p>\n<p>Course edition: <strong>2025 Fall–2026 Spring</strong> (<code>2025fall</code>, <code>2026spring</code>).\nRepository: <code>FAA-lecture-notes-2025fall-2026spring</code>.</p>\n<p>As of June 24, 2026, all course sessions have ended. The repository is kept mainly as an archive of the LaTeX sources for the two parts of the course:</p>\n<ul>\n<li><code>I/</code>: Part I course notes and related materials</li>\n<li><code>II/</code>: Part II course notes and related materials</li>\n</ul>\n<p>Compiled PDFs, including exercises and other handouts when available, will be packaged and published through GitHub Releases. Please check the repository's Releases page for downloadable PDF bundles instead of expecting built PDFs to be committed directly to the source tree.</p>\n<p>Maintenance will be very infrequent. Future updates are expected only when someone reports a typo, correction, or small improvement and contributes it directly.</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-contributing\">Contributing</h2>\n<p>Typo fixes and small corrections are welcome. If you notice an error, please open an issue or submit a pull request with a focused change.</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-license\">License</h2>\n<p>This repository is released under the MIT License. See <a href=\"https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE\">LICENSE</a> for details.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-代数与分析基础\">代数与分析基础</h1>\n<p>这个仓库用于归档 <strong>代数与分析基础</strong> 课程讲义的源文件。</p>\n<p>课程版本：<strong>2025 年秋季至 2026 年春季</strong>（<code>2025fall</code>、<code>2026spring</code>）。\n仓库名称：<code>FAA-lecture-notes-2025fall-2026spring</code>。</p>\n<p>截至 2026 年 6 月 24 日，今天所有课程均已结束。本仓库主要作为两部分课程 LaTeX 源文件的归档：</p>\n<ul>\n<li><code>I/</code>：第一部分课程讲义及相关材料</li>\n<li><code>II/</code>：第二部分课程讲义及相关材料</li>\n</ul>\n<p>编译后的 PDF，包括习题和其他讲义材料（如有），会打包发布在 GitHub Releases 中。请优先在本仓库的 Releases 页面下载 PDF 包，而不是期待编译后的 PDF 被直接提交到源代码目录中。</p>\n<p>之后本仓库的维护频率会非常低。预计只有在有人主动指出 typo、修正错误，或贡献小改进时，才会继续更新。</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-贡献\">贡献</h2>\n<p>欢迎提交 typo 修正和小范围勘误。如果你发现问题，可以开 issue，或者直接提交一个聚焦的 pull request。</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-许可证\">许可证</h2>\n<p>本仓库采用 MIT License 发布。详情见 <a href=\"https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE\">LICENSE</a>。</p>",
-      "toc": [
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-fundamental-algebra-and-analysis",
-          "value": "Fundamental Algebra and Analysis",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-contributing",
-          "value": "Contributing",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-license",
-          "value": "License",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-代数与分析基础",
-          "value": "代数与分析基础",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-贡献",
-          "value": "贡献",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-许可证",
-          "value": "许可证",
-          "level": 2
-        }
-      ],
-      "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/README.md",
-      "path": "README.md",
-      "sha": "ed0fc6f4f14e9dcdd331d4993c661faf501f93d9",
-      "syncedAt": "2026-10-24T09:13:55.053Z",
-      "documents": {
-        "contributing": {
-          "status": "missing",
-          "syncedAt": "2026-10-24T09:13:55.553Z"
-        },
-        "license": {
-          "status": "ready",
-          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 JieteXue</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
-          "toc": [],
-          "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE",
-          "path": "LICENSE",
-          "sha": "987697909c1582b6a9e30aed9dc6843645afbc34",
-          "syncedAt": "2026-10-24T09:13:55.895Z"
+          "syncedAt": "2026-10-24T11:57:09.381Z"
         }
       }
     },
@@ -233,145 +213,15 @@
       "sourceUrl": "https://github.com/qwerasdasd1/Linear-Algebra-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "533eec218b1b6a8eee732d3e02662c48147cb7e2",
-      "syncedAt": "2026-10-24T09:13:57.091Z",
+      "syncedAt": "2026-10-24T11:57:09.801Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:57.498Z"
+          "syncedAt": "2026-10-24T11:57:09.804Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:13:57.498Z"
-        }
-      }
-    },
-    "westlake-noter/measure-theory-and-real-analysis": {
-      "status": "ready",
-      "html": "<h1 id=\"readme-westlake-noter-measure-theory-and-real-analysis-measure-theory-and-real-analysis\">Measure Theory and Real Analysis</h1>\n<p>This repository contains the LaTeX source files for the <strong>Measure Theory and Real Analysis</strong> course notes.</p>\n<ul>\n<li><code>Measure Theory and Real Analysis.tex</code>: the main document, including document settings and chapter entries.</li>\n<li><code>Chapters/</code>: the source files for individual chapters.</li>\n</ul>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-build\">Build</h2>\n<p>Install a recent full TeX Live distribution with XeLaTeX. From the repository root, run:</p>\n<pre><code class=\"language-sh\">xelatex -interaction=nonstopmode -halt-on-error \"Measure Theory and Real Analysis.tex\"\nxelatex -interaction=nonstopmode -halt-on-error \"Measure Theory and Real Analysis.tex\"\n</code></pre>\n<p>PDFs, original board photographs, temporary files, and build artifacts are excluded from version control.</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-contributing\">Contributing</h2>\n<p>Typo fixes, mathematical corrections, and typesetting improvements are welcome. The notes will be updated as new chapters and corrections become available.</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-license\">License</h2>\n<p>MIT License. Copyright (c) 2026 westlake-noter. See <a href=\"https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE\">LICENSE</a>.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-measure-theory-and-real-analysis-测度论与实分析\">测度论与实分析</h1>\n<p>本仓库整理和维护 <strong>测度论与实分析</strong> 课程笔记的 LaTeX 源文件。</p>\n<ul>\n<li><code>Measure Theory and Real Analysis.tex</code>：LaTeX 主文件，包含文档设置及各章节的引入。</li>\n<li><code>Chapters/</code>：各章节的 LaTeX 源文件。</li>\n</ul>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-编译\">编译</h2>\n<p>安装包含 XeLaTeX 的较新完整版 TeX Live，在仓库根目录执行上面的两条编译命令。</p>\n<p>仓库仅收录源码及说明文件；PDF、原始板书照片、临时文件和编译产物不纳入版本管理。</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-贡献\">贡献</h2>\n<p>欢迎提交文字勘误、数学内容修正及排版改进。仓库将随新增章节和勘误持续更新。</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-许可证\">许可证</h2>\n<p>采用 MIT 许可证，版权署名为 2026 westlake-noter，详见 <a href=\"https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE\">LICENSE</a>。</p>",
-      "toc": [
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-measure-theory-and-real-analysis",
-          "value": "Measure Theory and Real Analysis",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-build",
-          "value": "Build",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-contributing",
-          "value": "Contributing",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-license",
-          "value": "License",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-测度论与实分析",
-          "value": "测度论与实分析",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-编译",
-          "value": "编译",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-贡献",
-          "value": "贡献",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-measure-theory-and-real-analysis-许可证",
-          "value": "许可证",
-          "level": 2
-        }
-      ],
-      "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/README.md",
-      "path": "README.md",
-      "sha": "4cc46bdb971b990e48b2c6626fb8f2711091bd9a",
-      "syncedAt": "2026-10-24T09:13:58.846Z",
-      "documents": {
-        "contributing": {
-          "status": "missing",
-          "syncedAt": "2026-10-24T09:13:59.262Z"
-        },
-        "license": {
-          "status": "ready",
-          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 westlake-noter</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
-          "toc": [],
-          "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE",
-          "path": "LICENSE",
-          "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T09:13:59.653Z"
-        }
-      }
-    },
-    "westlake-noter/ordinary-differential-equations": {
-      "status": "ready",
-      "html": "<h1 id=\"readme-westlake-noter-ordinary-differential-equations-ordinary-differential-equations\">Ordinary Differential Equations</h1>\n<p>This repository contains the LaTeX source files for the <strong>Ordinary Differential Equations</strong> course notes.</p>\n<ul>\n<li><code>Ordinary Differential Equations.tex</code>: the main document, including document settings and chapter entries.</li>\n<li><code>Chapters/</code>: the source files for individual chapters.</li>\n</ul>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-build\">Build</h2>\n<p>Install a recent full TeX Live distribution with XeLaTeX. From the repository root, run:</p>\n<pre><code class=\"language-sh\">xelatex -interaction=nonstopmode -halt-on-error \"Ordinary Differential Equations.tex\"\nxelatex -interaction=nonstopmode -halt-on-error \"Ordinary Differential Equations.tex\"\n</code></pre>\n<p>PDFs, original board photographs, temporary files, and build artifacts are excluded from version control.</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-contributing\">Contributing</h2>\n<p>Typo fixes, mathematical corrections, and typesetting improvements are welcome. The notes will be updated as new chapters and corrections become available.</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-license\">License</h2>\n<p>MIT License. Copyright (c) 2026 westlake-noter. See <a href=\"https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE\">LICENSE</a>.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-ordinary-differential-equations-常微分方程\">常微分方程</h1>\n<p>本仓库整理和维护 <strong>常微分方程</strong> 课程笔记的 LaTeX 源文件。</p>\n<ul>\n<li><code>Ordinary Differential Equations.tex</code>：LaTeX 主文件，包含文档设置及各章节的引入。</li>\n<li><code>Chapters/</code>：各章节的 LaTeX 源文件。</li>\n</ul>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-编译\">编译</h2>\n<p>安装包含 XeLaTeX 的较新完整版 TeX Live，在仓库根目录执行上面的两条编译命令。</p>\n<p>仓库仅收录源码及说明文件；PDF、原始板书照片、临时文件和编译产物不纳入版本管理。</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-贡献\">贡献</h2>\n<p>欢迎提交文字勘误、数学内容修正及排版改进。仓库将随新增章节和勘误持续更新。</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-许可证\">许可证</h2>\n<p>采用 MIT 许可证，版权署名为 2026 westlake-noter，详见 <a href=\"https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE\">LICENSE</a>。</p>",
-      "toc": [
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-ordinary-differential-equations",
-          "value": "Ordinary Differential Equations",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-build",
-          "value": "Build",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-contributing",
-          "value": "Contributing",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-license",
-          "value": "License",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-常微分方程",
-          "value": "常微分方程",
-          "level": 1
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-编译",
-          "value": "编译",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-贡献",
-          "value": "贡献",
-          "level": 2
-        },
-        {
-          "id": "readme-westlake-noter-ordinary-differential-equations-许可证",
-          "value": "许可证",
-          "level": 2
-        }
-      ],
-      "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/README.md",
-      "path": "README.md",
-      "sha": "427afe14175afd95ee0ab3ef7db7b5bac5e89b27",
-      "syncedAt": "2026-10-24T09:14:00.971Z",
-      "documents": {
-        "contributing": {
-          "status": "missing",
-          "syncedAt": "2026-10-24T09:14:01.388Z"
-        },
-        "license": {
-          "status": "ready",
-          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 westlake-noter</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
-          "toc": [],
-          "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE",
-          "path": "LICENSE",
-          "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T09:14:01.749Z"
+          "syncedAt": "2026-10-24T11:57:09.804Z"
         }
       }
     },
@@ -423,15 +273,200 @@
       "sourceUrl": "https://github.com/qwerasdasd1/PDE-notes/blob/main/README.md",
       "path": "README.md",
       "sha": "8fc7f65f62927d522cb5ecac2f3a6d9cd099d7b3",
-      "syncedAt": "2026-10-24T09:14:03.249Z",
+      "syncedAt": "2026-10-24T11:57:09.811Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:14:03.756Z"
+          "syncedAt": "2026-10-24T11:57:09.804Z"
         },
         "license": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:14:03.756Z"
+          "syncedAt": "2026-10-24T11:57:09.804Z"
+        }
+      }
+    },
+    "westlake-noter/faa-lecture-notes-2025fall-2026spring": {
+      "status": "ready",
+      "html": "<h1 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-fundamental-algebra-and-analysis\">Fundamental Algebra and Analysis</h1>\n<p>This repository archives the source files for the <strong>Fundamental Algebra and Analysis</strong> course notes.</p>\n<p>Course edition: <strong>2025 Fall–2026 Spring</strong> (<code>2025fall</code>, <code>2026spring</code>).\nRepository: <code>FAA-lecture-notes-2025fall-2026spring</code>.</p>\n<p>As of June 24, 2026, all course sessions have ended. The repository is kept mainly as an archive of the LaTeX sources for the two parts of the course:</p>\n<ul>\n<li><code>I/</code>: Part I course notes and related materials</li>\n<li><code>II/</code>: Part II course notes and related materials</li>\n</ul>\n<p>Compiled PDFs, including exercises and other handouts when available, will be packaged and published through GitHub Releases. Please check the repository's Releases page for downloadable PDF bundles instead of expecting built PDFs to be committed directly to the source tree.</p>\n<p>Maintenance will be very infrequent. Future updates are expected only when someone reports a typo, correction, or small improvement and contributes it directly.</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-contributing\">Contributing</h2>\n<p>Typo fixes and small corrections are welcome. If you notice an error, please open an issue or submit a pull request with a focused change.</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-license\">License</h2>\n<p>This repository is released under the MIT License. See <a href=\"https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE\">LICENSE</a> for details.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-代数与分析基础\">代数与分析基础</h1>\n<p>这个仓库用于归档 <strong>代数与分析基础</strong> 课程讲义的源文件。</p>\n<p>课程版本：<strong>2025 年秋季至 2026 年春季</strong>（<code>2025fall</code>、<code>2026spring</code>）。\n仓库名称：<code>FAA-lecture-notes-2025fall-2026spring</code>。</p>\n<p>截至 2026 年 6 月 24 日，今天所有课程均已结束。本仓库主要作为两部分课程 LaTeX 源文件的归档：</p>\n<ul>\n<li><code>I/</code>：第一部分课程讲义及相关材料</li>\n<li><code>II/</code>：第二部分课程讲义及相关材料</li>\n</ul>\n<p>编译后的 PDF，包括习题和其他讲义材料（如有），会打包发布在 GitHub Releases 中。请优先在本仓库的 Releases 页面下载 PDF 包，而不是期待编译后的 PDF 被直接提交到源代码目录中。</p>\n<p>之后本仓库的维护频率会非常低。预计只有在有人主动指出 typo、修正错误，或贡献小改进时，才会继续更新。</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-贡献\">贡献</h2>\n<p>欢迎提交 typo 修正和小范围勘误。如果你发现问题，可以开 issue，或者直接提交一个聚焦的 pull request。</p>\n<h2 id=\"readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-许可证\">许可证</h2>\n<p>本仓库采用 MIT License 发布。详情见 <a href=\"https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE\">LICENSE</a>。</p>",
+      "toc": [
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-fundamental-algebra-and-analysis",
+          "value": "Fundamental Algebra and Analysis",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-contributing",
+          "value": "Contributing",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-license",
+          "value": "License",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-代数与分析基础",
+          "value": "代数与分析基础",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-贡献",
+          "value": "贡献",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-faa-lecture-notes-2025fall-2026spring-许可证",
+          "value": "许可证",
+          "level": 2
+        }
+      ],
+      "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/README.md",
+      "path": "README.md",
+      "sha": "ed0fc6f4f14e9dcdd331d4993c661faf501f93d9",
+      "syncedAt": "2026-10-24T11:57:10.312Z",
+      "documents": {
+        "contributing": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T11:57:10.622Z"
+        },
+        "license": {
+          "status": "ready",
+          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 JieteXue</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
+          "toc": [],
+          "sourceUrl": "https://github.com/westlake-noter/FAA-lecture-notes-2025fall-2026spring/blob/main/LICENSE",
+          "path": "LICENSE",
+          "sha": "987697909c1582b6a9e30aed9dc6843645afbc34",
+          "syncedAt": "2026-10-24T11:57:11.001Z"
+        }
+      }
+    },
+    "westlake-noter/measure-theory-and-real-analysis": {
+      "status": "ready",
+      "html": "<h1 id=\"readme-westlake-noter-measure-theory-and-real-analysis-measure-theory-and-real-analysis\">Measure Theory and Real Analysis</h1>\n<p>This repository contains the LaTeX source files for the <strong>Measure Theory and Real Analysis</strong> course notes.</p>\n<ul>\n<li><code>Measure Theory and Real Analysis.tex</code>: the main document, including document settings and chapter entries.</li>\n<li><code>Chapters/</code>: the source files for individual chapters.</li>\n</ul>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-build\">Build</h2>\n<p>Install a recent full TeX Live distribution with XeLaTeX. From the repository root, run:</p>\n<pre><code class=\"language-sh\">xelatex -interaction=nonstopmode -halt-on-error \"Measure Theory and Real Analysis.tex\"\nxelatex -interaction=nonstopmode -halt-on-error \"Measure Theory and Real Analysis.tex\"\n</code></pre>\n<p>PDFs, original board photographs, temporary files, and build artifacts are excluded from version control.</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-contributing\">Contributing</h2>\n<p>Typo fixes, mathematical corrections, and typesetting improvements are welcome. The notes will be updated as new chapters and corrections become available.</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-license\">License</h2>\n<p>MIT License. Copyright (c) 2026 westlake-noter. See <a href=\"https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE\">LICENSE</a>.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-measure-theory-and-real-analysis-测度论与实分析\">测度论与实分析</h1>\n<p>本仓库整理和维护 <strong>测度论与实分析</strong> 课程笔记的 LaTeX 源文件。</p>\n<ul>\n<li><code>Measure Theory and Real Analysis.tex</code>：LaTeX 主文件，包含文档设置及各章节的引入。</li>\n<li><code>Chapters/</code>：各章节的 LaTeX 源文件。</li>\n</ul>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-编译\">编译</h2>\n<p>安装包含 XeLaTeX 的较新完整版 TeX Live，在仓库根目录执行上面的两条编译命令。</p>\n<p>仓库仅收录源码及说明文件；PDF、原始板书照片、临时文件和编译产物不纳入版本管理。</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-贡献\">贡献</h2>\n<p>欢迎提交文字勘误、数学内容修正及排版改进。仓库将随新增章节和勘误持续更新。</p>\n<h2 id=\"readme-westlake-noter-measure-theory-and-real-analysis-许可证\">许可证</h2>\n<p>采用 MIT 许可证，版权署名为 2026 westlake-noter，详见 <a href=\"https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE\">LICENSE</a>。</p>",
+      "toc": [
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-measure-theory-and-real-analysis",
+          "value": "Measure Theory and Real Analysis",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-build",
+          "value": "Build",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-contributing",
+          "value": "Contributing",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-license",
+          "value": "License",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-测度论与实分析",
+          "value": "测度论与实分析",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-编译",
+          "value": "编译",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-贡献",
+          "value": "贡献",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-measure-theory-and-real-analysis-许可证",
+          "value": "许可证",
+          "level": 2
+        }
+      ],
+      "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/README.md",
+      "path": "README.md",
+      "sha": "4cc46bdb971b990e48b2c6626fb8f2711091bd9a",
+      "syncedAt": "2026-10-24T11:57:10.432Z",
+      "documents": {
+        "contributing": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T11:57:10.295Z"
+        },
+        "license": {
+          "status": "ready",
+          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 westlake-noter</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
+          "toc": [],
+          "sourceUrl": "https://github.com/westlake-noter/Measure-Theory-and-Real-Analysis/blob/main/LICENSE",
+          "path": "LICENSE",
+          "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
+          "syncedAt": "2026-10-24T11:57:10.686Z"
+        }
+      }
+    },
+    "westlake-noter/ordinary-differential-equations": {
+      "status": "ready",
+      "html": "<h1 id=\"readme-westlake-noter-ordinary-differential-equations-ordinary-differential-equations\">Ordinary Differential Equations</h1>\n<p>This repository contains the LaTeX source files for the <strong>Ordinary Differential Equations</strong> course notes.</p>\n<ul>\n<li><code>Ordinary Differential Equations.tex</code>: the main document, including document settings and chapter entries.</li>\n<li><code>Chapters/</code>: the source files for individual chapters.</li>\n</ul>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-build\">Build</h2>\n<p>Install a recent full TeX Live distribution with XeLaTeX. From the repository root, run:</p>\n<pre><code class=\"language-sh\">xelatex -interaction=nonstopmode -halt-on-error \"Ordinary Differential Equations.tex\"\nxelatex -interaction=nonstopmode -halt-on-error \"Ordinary Differential Equations.tex\"\n</code></pre>\n<p>PDFs, original board photographs, temporary files, and build artifacts are excluded from version control.</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-contributing\">Contributing</h2>\n<p>Typo fixes, mathematical corrections, and typesetting improvements are welcome. The notes will be updated as new chapters and corrections become available.</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-license\">License</h2>\n<p>MIT License. Copyright (c) 2026 westlake-noter. See <a href=\"https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE\">LICENSE</a>.</p>\n<hr>\n<h1 id=\"readme-westlake-noter-ordinary-differential-equations-常微分方程\">常微分方程</h1>\n<p>本仓库整理和维护 <strong>常微分方程</strong> 课程笔记的 LaTeX 源文件。</p>\n<ul>\n<li><code>Ordinary Differential Equations.tex</code>：LaTeX 主文件，包含文档设置及各章节的引入。</li>\n<li><code>Chapters/</code>：各章节的 LaTeX 源文件。</li>\n</ul>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-编译\">编译</h2>\n<p>安装包含 XeLaTeX 的较新完整版 TeX Live，在仓库根目录执行上面的两条编译命令。</p>\n<p>仓库仅收录源码及说明文件；PDF、原始板书照片、临时文件和编译产物不纳入版本管理。</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-贡献\">贡献</h2>\n<p>欢迎提交文字勘误、数学内容修正及排版改进。仓库将随新增章节和勘误持续更新。</p>\n<h2 id=\"readme-westlake-noter-ordinary-differential-equations-许可证\">许可证</h2>\n<p>采用 MIT 许可证，版权署名为 2026 westlake-noter，详见 <a href=\"https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE\">LICENSE</a>。</p>",
+      "toc": [
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-ordinary-differential-equations",
+          "value": "Ordinary Differential Equations",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-build",
+          "value": "Build",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-contributing",
+          "value": "Contributing",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-license",
+          "value": "License",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-常微分方程",
+          "value": "常微分方程",
+          "level": 1
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-编译",
+          "value": "编译",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-贡献",
+          "value": "贡献",
+          "level": 2
+        },
+        {
+          "id": "readme-westlake-noter-ordinary-differential-equations-许可证",
+          "value": "许可证",
+          "level": 2
+        }
+      ],
+      "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/README.md",
+      "path": "README.md",
+      "sha": "427afe14175afd95ee0ab3ef7db7b5bac5e89b27",
+      "syncedAt": "2026-10-24T11:57:11.161Z",
+      "documents": {
+        "contributing": {
+          "status": "missing",
+          "syncedAt": "2026-10-24T11:57:11.154Z"
+        },
+        "license": {
+          "status": "ready",
+          "html": "<p>MIT License</p>\n<p>Copyright (c) 2026 westlake-noter</p>\n<p>Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:</p>\n<p>The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.</p>\n<p>THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.</p>",
+          "toc": [],
+          "sourceUrl": "https://github.com/westlake-noter/Ordinary-Differential-Equations/blob/main/LICENSE",
+          "path": "LICENSE",
+          "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
+          "syncedAt": "2026-10-24T11:57:11.545Z"
         }
       }
     },
@@ -463,11 +498,11 @@
       "sourceUrl": "https://github.com/westlake-noter/Probability-Theory/blob/main/README.md",
       "path": "README.md",
       "sha": "a426f629397fc9c610d4271c8562385202914c68",
-      "syncedAt": "2026-10-24T09:14:05.285Z",
+      "syncedAt": "2026-10-24T11:57:11.481Z",
       "documents": {
         "contributing": {
           "status": "missing",
-          "syncedAt": "2026-10-24T09:14:05.793Z"
+          "syncedAt": "2026-10-24T11:57:11.482Z"
         },
         "license": {
           "status": "ready",
@@ -476,42 +511,7 @@
           "sourceUrl": "https://github.com/westlake-noter/Probability-Theory/blob/main/LICENSE",
           "path": "LICENSE",
           "sha": "4653032f18189d834ae8bba63061afcb1753f7a9",
-          "syncedAt": "2026-10-24T09:14:06.126Z"
-        }
-      }
-    },
-    "jietexue/quantum-mechanics-notes": {
-      "status": "ready",
-      "html": "<h1 id=\"readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025\">Quantum Mechanics Notes - Fall 2025</h1>\n<p>Personal study notes for the Fall 2025 Quantum Mechanics course at Westlake University, taught by <strong>Congjun Wu</strong>. The notes are written primarily in English using LaTeX.</p>\n<p>Instructor's lecture notes: <a href=\"https://wucj.lab.westlake.edu.cn/teach/QuantumMechanics2025/QuantumMechanics2025.html\">Quantum Mechanics 2025</a>.</p>\n<p><strong>These notes do not follow the order of the lectures.</strong> Topics, derivations, and computational methods are reorganized around my own understanding, with a strongly personal approach to selection, presentation, and emphasis. They are not official lecture notes or a complete record of the course, and may contain errors or omissions.</p>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-contents\">Contents</h2>\n<ul>\n<li><strong>Foundations:</strong> quantization, Dirac notation, operators, commutators, compatible observables, and uncertainty relations.</li>\n<li><strong>Wave functions and dynamics:</strong> position and momentum representations, the Schrodinger equation, probability density and current, exponential operators, and the Baker-Hausdorff lemma.</li>\n<li><strong>Model systems:</strong> analytical and algebraic treatments of the harmonic oscillator, coherent states, gauge transformations, Landau levels, and the quantum Hall effect.</li>\n<li><strong>Angular momentum and symmetries:</strong> rotations, spherical harmonics, angular momentum addition, Clebsch-Gordan coefficients, parity, and time reversal.</li>\n<li><strong>Approximation methods:</strong> time-independent and time-dependent perturbation theory, the interaction picture, the Landau-Zener model, adiabatic evolution, and the Berry phase.</li>\n<li><strong>Path integrals and scattering:</strong> propagators, Feynman's path integral formulation, and partial-wave scattering.</li>\n</ul>\n<h2 id=\"readme-jietexue-quantum-mechanics-notes-build\">Build</h2>\n<p>The main source is <code>quantum-mechanics-notes.tex</code>; illustrations and their SVG source are in <code>figures/</code>.</p>\n<p>With a TeX distribution containing the required packages and <code>latexmk</code> installed, run from the repository root:</p>\n<pre><code class=\"language-sh\">latexmk -pdf quantum-mechanics-notes.tex\n</code></pre>",
-      "toc": [
-        {
-          "id": "readme-jietexue-quantum-mechanics-notes-quantum-mechanics-notes---fall-2025",
-          "value": "Quantum Mechanics Notes - Fall 2025",
-          "level": 1
-        },
-        {
-          "id": "readme-jietexue-quantum-mechanics-notes-contents",
-          "value": "Contents",
-          "level": 2
-        },
-        {
-          "id": "readme-jietexue-quantum-mechanics-notes-build",
-          "value": "Build",
-          "level": 2
-        }
-      ],
-      "sourceUrl": "https://github.com/JieteXue/quantum-mechanics-notes/blob/main/README.md",
-      "path": "README.md",
-      "sha": "bd39ecbadedbc4910713c50cc1b336e7c1680670",
-      "syncedAt": "2026-10-24T09:14:07.411Z",
-      "documents": {
-        "contributing": {
-          "status": "missing",
-          "syncedAt": "2026-10-24T09:14:07.799Z"
-        },
-        "license": {
-          "status": "missing",
-          "syncedAt": "2026-10-24T09:14:07.799Z"
+          "syncedAt": "2026-10-24T11:57:11.815Z"
         }
       }
     }

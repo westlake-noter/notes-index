@@ -1,4 +1,4 @@
-import {renderReadme} from '../lib/github-documents.mjs';
+import {renderReadme} from '../lib/github/documents.mjs';
 import {documentViews} from '../src/features/repositories/documents.mjs';
 
 export default function remarkRepositoryTabs({sources = {}, baseUrl = '/', sourceBase} = {}) {

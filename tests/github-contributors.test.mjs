@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {fetchContributors, fetchRepositoryInfo} from '../lib/github-contributors.mjs';
+import {fetchContributors, fetchRepositoryInfo} from '../lib/github/contributors.mjs';
 
 const user = (id, contributions = 1) => ({
   id, login: `user-${id}`, type: 'User', contributions,

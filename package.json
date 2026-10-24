@@ -49,6 +49,7 @@
     "node": ">=20.0"
   },
   "devDependencies": {
+    "@docusaurus/faster": "3.10.2",
     "github-slugger": "^2.0.0",
     "hast-util-to-text": "^4.0.2",
     "rehype-raw": "^7.0.0",

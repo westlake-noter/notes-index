@@ -43,6 +43,18 @@ docs/
       <course>.md
   tools/
     index.md
+lib/
+  github/
+    repositories.mjs
+    contributors.mjs
+    documents.mjs
+    sync.mjs
+  local-repository-tabs.mjs
+plugins/
+  remark-repository-contributors.mjs
+  remark-repository-tabs.mjs
+scripts/
+  sync-repositories.mjs
 src/
   components/
   css/
@@ -79,8 +91,14 @@ need to register individual pages there.
 - `src/components/`: standalone reusable visuals such as icons and the campus map.
 - `src/css/`: shared typography, color tokens, and Glass layout selectors;
   feature-specific styles stay beside their components.
-- `lib/`, `plugins/`, and `scripts/`: GitHub/Markdown processing, the remark
-  integration, and the build-time snapshot command respectively.
+- `lib/github/`: repository URL extraction, GitHub endpoint clients,
+  sanitized document rendering, and snapshot freshness/concurrency rules.
+- `lib/local-repository-tabs.mjs`: local custom-tab source discovery.
+- `plugins/`: remark adapters that attach repository metadata and custom tabs.
+- `scripts/`: command-line entry points. Keep reusable sync rules in
+  `lib/github/sync.mjs`, not in the script.
+- `src/data/`: committed, public repository snapshots; these are generated
+  data, not hand-authored course descriptions.
 
 Import feature entry points from pages and theme adapters. Do not import a
 theme adapter from a feature; use native `@theme-original` components when
@@ -162,6 +180,26 @@ repositories without data show a link to GitHub's contributors page instead.
 Changes on external repositories become visible after the next sync and site
 deployment; they do not update live in the visitor's browser.
 
+The sync command reuses complete snapshots for up to six hours. It checks
+contributors, statistics, README, Contributing, and License together; a new
+repository, an incomplete snapshot, or a failed previous fetch is retried.
+Two repositories refresh concurrently, with independent endpoint families
+requested in parallel. Removed repository links are pruned from the output.
+Transient errors preserve saved data rather than publishing blank content.
+
+To fetch upstream changes immediately, bypassing the freshness window:
+
+```sh
+GITHUB_TOKEN="$(gh auth token)" npm run sync:repositories -- --force
+```
+
+This uses your existing GitHub CLI login. Without `gh`, set `GITHUB_TOKEN`
+through your local environment instead; never put tokens in committed files.
+The ignored `.cache/repositories/` directory stores reusable local/CI
+snapshots. The command merges it with committed data by timestamp and writes
+the selected results to `src/data/`. Commit intentional snapshot refreshes
+along with relevant course changes. Regular builds do not contact GitHub.
+
 ### Repository Documents
 
 Pages linking to repositories have four tabs: Overview, README, Contributing,
@@ -177,7 +215,7 @@ mobile tables of contents follow the selected content. `?view=readme&repo=owner/
 (or `view=contributing` / `view=license`) and scoped heading fragments preserve
 the selected document after refreshing.
 
-`lib/github-documents.mjs` fetches the default README through GitHub's REST API,
+`lib/github/documents.mjs` fetches the default README through GitHub's REST API,
 renders GFM and KaTeX with unified, and caches sanitized HTML and its heading
 tree. Relative links point to GitHub files and relative images to raw files.
 README HTML is sanitized before trusted KaTeX output is added; it is never
@@ -513,12 +551,40 @@ text-only edits. A commit that changes both repository documentation and site
 files still triggers the workflow. Manual runs remain available through
 **Actions > Build and Deploy Pages > Run workflow**.
 
-CI reuses the npm download cache and Webpack's persistent compilation cache.
-The Webpack cache is restored after `npm ci`, is separated by runner platform,
-Node version, dependencies, and site configuration, and is refreshed for each
-commit. Generated site output is rebuilt, not restored as the published artifact.
-The first build after a dependency or configuration change starts with a cold
-compilation cache; cache hits do not eliminate the build or deployment steps.
+### Build and Deployment Performance
+
+The site uses Docusaurus's official `@docusaurus/faster` package, pinned to the
+same version as Docusaurus. `future.faster` enables SWC JavaScript compilation,
+JavaScript/HTML minification, Lightning CSS minification, shared MDX compilation,
+and eager Git metadata lookup. Webpack remains the bundler; Rspack and SSG worker
+threads are not enabled. Keep broken-link checks and the complete test suite.
+
+CI maintains three separate caches:
+
+- npm's download cache speeds up `npm ci --no-audit --no-fund`; dependencies
+  are still installed from the lockfile on every run. The flags avoid install-time
+  audit/funding requests, not dependency security maintenance.
+- `node_modules/.cache/` preserves compilation caches after installation.
+  Keys include runner platform, Node version, dependencies, and site configuration.
+  A dependency/configuration change starts a new cold cache.
+- `.cache/repositories/` preserves public upstream snapshots between runs.
+  The six-hour freshness check avoids network requests during routine edits.
+  Select **Refresh upstream repository snapshots even when cached** in a manual
+  workflow run to force a refresh. An upstream change alone does not trigger
+  a deployment; run the workflow to publish it.
+
+Only successful builds on `main` save these caches; pull requests may restore
+caches but do not publish new shared snapshots or site artifacts.
+Generated `build/` output is always rebuilt and uploaded for deployment, never
+restored as the published artifact. This is compilation/data reuse, not partial
+HTML deployment: changing Markdown can affect navigation, links, and shared
+bundles, so the final site still receives a full consistency check.
+
+To measure a cold local build, run `npm run clear` followed by
+`time npm run build`; then run `time npm run build` again for a warm comparison.
+`npm run clear` also clears compilation caches. Do not compare cold and warm
+times as if they were equivalent. GitHub's artifact upload, job scheduling,
+and Pages publication remain outside the Docusaurus build.
 
 New runs cancel older builds for the same branch or pull request. Deployments
 remain serialized and are not interrupted by newer builds. Before publishing,

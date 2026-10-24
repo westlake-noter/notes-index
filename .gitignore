@@ -2,6 +2,7 @@ node_modules/
 build/
 .docusaurus/
 .cache-loader/
+.cache/
 .DS_Store
 *.log
 output/

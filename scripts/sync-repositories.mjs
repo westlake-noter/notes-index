@@ -7,13 +7,17 @@ import remarkMdx from 'remark-mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import {repositoriesFromTree} from '../lib/github-repositories.mjs';
-import {fetchContributors, fetchRepositoryInfo} from '../lib/github-contributors.mjs';
-import {syncReadme, syncSupportingDocuments} from '../lib/github-documents.mjs';
+import {repositoriesFromTree} from '../lib/github/repositories.mjs';
+import {mergeSnapshots, syncRepositories} from '../lib/github/sync.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'src/data/repository-contributors.json');
 const readmeOutput = path.join(root, 'src/data/repository-documents.json');
+const cache = path.join(root, '.cache/repositories');
+const force = process.argv.includes('--force');
+if (process.argv.slice(2).some((argument) => argument !== '--force')) {
+  throw new Error('Usage: npm run sync:repositories -- [--force]');
+}
 const parser = unified().use(remarkParse).use(remarkFrontmatter).use(remarkMdx)
   .use(remarkGfm).use(remarkMath);
 
@@ -30,52 +34,25 @@ async function collectRepositories(directory, repositories = new Set()) {
   return repositories;
 }
 
-let previous = {};
-try {
-  previous = JSON.parse(await readFile(output, 'utf8')).repositories ?? {};
-} catch (error) {
-  if (error.code !== 'ENOENT') throw error;
-}
-const repositories = {};
-let savedReadmes = {};
-try {
-  savedReadmes = JSON.parse(await readFile(readmeOutput, 'utf8')).repositories ?? {};
-} catch (error) {
-  if (error.code !== 'ENOENT') throw error;
-}
-const readmes = {};
-for (const repository of await collectRepositories(path.join(root, 'docs'))) {
+async function load(filename) {
   try {
-    repositories[repository] = {
-      ...previous[repository],
-      contributors: await fetchContributors(repository, {token: process.env.GITHUB_TOKEN}),
-      updatedAt: new Date().toISOString(),
-    };
-    console.log(`${repository}: ${repositories[repository].contributors.length} contributors`);
+    return JSON.parse(await readFile(filename, 'utf8')).repositories ?? {};
   } catch (error) {
-    repositories[repository] = previous[repository] ?? {contributors: null, updatedAt: null};
-    console.warn(`${repository}: ${error.message}; keeping the saved data or GitHub fallback link.`);
+    if (error.code === 'ENOENT') return {};
+    throw error;
   }
-  try {
-    repositories[repository].info = await fetchRepositoryInfo(repository, {
-      token: process.env.GITHUB_TOKEN,
-    });
-  } catch (error) {
-    console.warn(`${repository}: repository statistics unavailable (${error.message}).`);
-  }
-  readmes[repository] = await syncReadme(repository, savedReadmes[repository], {
-    token: process.env.GITHUB_TOKEN,
-    onError: (error) => console.warn(`${repository}: README sync failed (${error.message}); keeping cache.`),
-  });
-  console.log(`${repository}: README ${readmes[repository].status}`);
-  readmes[repository].documents = await syncSupportingDocuments(
-    repository, savedReadmes[repository]?.documents, {
-      token: process.env.GITHUB_TOKEN,
-      onError: (error) => console.warn(`${repository}: supporting document sync failed (${error.message}).`),
-    },
-  );
-  console.log(`${repository}: Contributing ${readmes[repository].documents.contributing.status}, License ${readmes[repository].documents.license.status}`);
 }
+
+const cachedContributors = path.join(cache, 'contributors.json');
+const cachedDocuments = path.join(cache, 'documents.json');
+const result = await syncRepositories(await collectRepositories(path.join(root, 'docs')), {
+  previousContributors: mergeSnapshots(await load(output), await load(cachedContributors), 'updatedAt'),
+  previousDocuments: mergeSnapshots(await load(readmeOutput), await load(cachedDocuments), 'syncedAt'),
+  force, token: process.env.GITHUB_TOKEN,
+});
+await mkdir(cache, {recursive: true});
 await mkdir(path.dirname(output), {recursive: true});
-await writeFile(output, `${JSON.stringify({repositories}, null, 2)}\n`);
-await writeFile(readmeOutput, `${JSON.stringify({repositories: readmes}, null, 2)}\n`);
+await Promise.all([
+  [output, result.contributors], [cachedContributors, result.contributors],
+  [readmeOutput, result.documents], [cachedDocuments, result.documents],
+].map(([filename, value]) => writeFile(filename, `${JSON.stringify(value, null, 2)}\n`)));

@@ -8,9 +8,23 @@
           "contributions": 4
         }
       ],
-      "updatedAt": "2026-10-24T09:13:50.557Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 3,
+        "forks": 0
+      }
+    },
+    "jietexue/quantum-mechanics-notes": {
+      "contributors": [
+        {
+          "id": 221569880,
+          "login": "JieteXue",
+          "contributions": 6
+        }
+      ],
+      "updatedAt": "2026-10-24T11:57:08.162Z",
+      "info": {
+        "stars": 0,
         "forks": 0
       }
     },
@@ -22,10 +36,38 @@
           "contributions": 29
         }
       ],
-      "updatedAt": "2026-10-24T09:13:52.360Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 6,
         "forks": 2
+      }
+    },
+    "qwerasdasd1/linear-algebra-notes": {
+      "contributors": [
+        {
+          "id": 159507269,
+          "login": "qwerasdasd1",
+          "contributions": 14
+        }
+      ],
+      "updatedAt": "2026-10-24T11:57:08.162Z",
+      "info": {
+        "stars": 3,
+        "forks": 1
+      }
+    },
+    "qwerasdasd1/pde-notes": {
+      "contributors": [
+        {
+          "id": 159507269,
+          "login": "qwerasdasd1",
+          "contributions": 3
+        }
+      ],
+      "updatedAt": "2026-10-24T11:57:08.162Z",
+      "info": {
+        "stars": 0,
+        "forks": 0
       }
     },
     "westlake-noter/faa-lecture-notes-2025fall-2026spring": {
@@ -41,24 +83,10 @@
           "contributions": 1
         }
       ],
-      "updatedAt": "2026-10-24T09:13:54.125Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 2,
         "forks": 0
-      }
-    },
-    "qwerasdasd1/linear-algebra-notes": {
-      "contributors": [
-        {
-          "id": 159507269,
-          "login": "qwerasdasd1",
-          "contributions": 14
-        }
-      ],
-      "updatedAt": "2026-10-24T09:13:56.288Z",
-      "info": {
-        "stars": 3,
-        "forks": 1
       }
     },
     "westlake-noter/measure-theory-and-real-analysis": {
@@ -74,7 +102,7 @@
           "contributions": 1
         }
       ],
-      "updatedAt": "2026-10-24T09:13:57.908Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 0,
         "forks": 0
@@ -93,21 +121,7 @@
           "contributions": 1
         }
       ],
-      "updatedAt": "2026-10-24T09:14:00.059Z",
-      "info": {
-        "stars": 0,
-        "forks": 0
-      }
-    },
-    "qwerasdasd1/pde-notes": {
-      "contributors": [
-        {
-          "id": 159507269,
-          "login": "qwerasdasd1",
-          "contributions": 3
-        }
-      ],
-      "updatedAt": "2026-10-24T09:14:02.209Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 0,
         "forks": 0
@@ -131,21 +145,7 @@
           "contributions": 2
         }
       ],
-      "updatedAt": "2026-10-24T09:14:04.258Z",
-      "info": {
-        "stars": 0,
-        "forks": 0
-      }
-    },
-    "jietexue/quantum-mechanics-notes": {
-      "contributors": [
-        {
-          "id": 221569880,
-          "login": "JieteXue",
-          "contributions": 6
-        }
-      ],
-      "updatedAt": "2026-10-24T09:14:06.613Z",
+      "updatedAt": "2026-10-24T11:57:08.162Z",
       "info": {
         "stars": 0,
         "forks": 0

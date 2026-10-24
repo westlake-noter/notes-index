@@ -1,4 +1,4 @@
-import {repositoriesFromTree} from '../lib/github-repositories.mjs';
+import {repositoriesFromTree} from '../lib/github/repositories.mjs';
 
 export default function remarkRepositoryContributors() {
   return (tree, file) => {

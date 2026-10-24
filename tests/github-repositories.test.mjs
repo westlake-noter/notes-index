@@ -6,7 +6,7 @@ import remarkMdx from 'remark-mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import {repositoryFromUrl, repositoriesFromTree} from '../lib/github-repositories.mjs';
+import {repositoryFromUrl, repositoriesFromTree} from '../lib/github/repositories.mjs';
 import remarkRepositoryContributors from '../plugins/remark-repository-contributors.mjs';
 
 const parser = unified().use(remarkParse).use(remarkFrontmatter).use(remarkMdx)
