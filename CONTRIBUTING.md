@@ -222,8 +222,11 @@ drawer. The desktop sidebar wrapper only adds the shared `Logo` component.
 Keep the logo transparent, preserve the two-state theme toggle, and check
 sidebar scrolling and mobile navigation after layout changes.
 
-The desktop `src/theme/TOC/` reuses Docusaurus heading detection and the
-Fumadocs block highlight algorithm. Preserve the edge fade, keyboard focus,
+The desktop `src/theme/TOC/` reuses Docusaurus's heading tree and Fumadocs's
+multi-anchor observer and block highlight algorithm. All headings visible below
+the navbar are highlighted together; when none are visible, the nearest heading
+remains active. The desktop single-item Docusaurus highlight is disabled so it
+cannot overwrite this range. Preserve the edge fade, keyboard focus,
 reduced-motion behavior, and observer cleanup when editing it. The gray
 surfaces use blue highlights with restrained orange accents drawn from the
 supplied Westlake logo; keep orange text contrast-adjusted in both color modes.

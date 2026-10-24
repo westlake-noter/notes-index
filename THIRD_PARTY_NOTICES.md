@@ -21,6 +21,7 @@ commit `4b1052413e20e2834337fe6a24a0ef108e9ebabf`:
 - `packages/base-ui/src/components/toc/index.tsx`
 - `packages/base-ui/src/components/toc/block.tsx`
 - `packages/base-ui/src/components/github-info.tsx`
+- `packages/core/src/toc.tsx`
 - `apps/docs/app/(home)/page.tsx`
 - `apps/docs/components/contributor-count.tsx`
 - `apps/docs/lib/get-contributors.ts`
@@ -45,8 +46,10 @@ Docusaurus document components are retained in an adapted MIT-licensed
 DocItem/Layout to place this information in the right-hand rail.
 
 `src/theme/TOC/index.js` adapts the block TOC's resize-cached item positions and
-animated `clip-path`. A class observer connects it to Docusaurus's existing
-heading highlight instead of introducing a second scroll spy. The edge mask
+animated `clip-path`. Its desktop heading observer adapts Fumadocs core's
+multi-anchor visibility and nearest-heading fallback. Docusaurus still renders
+the filtered heading tree; its single-active-item observer is disabled for this
+desktop TOC. A class observer expands the gradient across all active links. The edge mask
 and fading active background are translated from the upstream TOC styles.
 
 ### MIT License
