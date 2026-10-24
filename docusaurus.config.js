@@ -70,6 +70,10 @@ const config = {
           label: 'Tools',
         },
         {
+          type: 'custom-expandNavigation',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/westlake-noter/notes-index',
           label: 'GitHub',
           position: 'right',

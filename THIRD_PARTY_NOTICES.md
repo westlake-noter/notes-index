@@ -1,12 +1,5 @@
 # Third-Party Notices
 
-## Headroom.js
-
-The desktop navbar uses the MIT-licensed `headroom.js` package, version `0.12.0`,
-by Nick Williams: <https://github.com/WickyNilliams/headroom.js>.
-Its bundled license is included by the dependency. The site supplies only the
-Docusaurus adapter, focus handling, and CSS contraction animation.
-
 ## Fumadocs
 
 The Glass appearance in `src/css/glass.css` adapts the neutral color tokens

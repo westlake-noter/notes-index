@@ -85,6 +85,35 @@ html[data-theme='dark'] {
   gap: 8px;
 }
 
+.navbar__expand {
+  display: none;
+}
+
+@media (min-width: 997px) {
+  .navbar__expand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--ifm-navbar-link-color);
+  }
+
+  .navbar__expand:disabled {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar__expand:hover,
+  .navbar__expand:focus-visible {
+    border-color: var(--site-orange-emphasis);
+    background: var(--site-orange-tint);
+  }
+}
+
 .navbar__link {
   padding: 7px 12px;
   border-radius: 8px;

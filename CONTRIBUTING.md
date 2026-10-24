@@ -231,10 +231,12 @@ reduced-motion behavior, and observer cleanup when editing it. The gray
 surfaces use blue highlights with restrained orange accents drawn from the
 supplied Westlake logo; keep orange text contrast-adjusted in both color modes.
 
-The desktop navbar uses `headroom.js` for scroll direction, offset, and tolerance.
 `src/theme/Navbar/Layout/` wraps the original layout without replacing navigation
-or the mobile drawer. Downward scrolling contracts the surface toward the right
-actions; upward scrolling, route changes, and navigation focus expand it.
+or the mobile drawer. Away from the page top, scrolling in either direction
+contracts the surface toward the right actions. The expand button opens it
+until the next actual page scroll; returning to the top opens it automatically.
+The button uses Docusaurus's custom navbar item API. Scroll state is tested in
+`tests/navbar-scroll.test.mjs`; no scroll-direction dependency is needed.
 Keep hidden left-hand links inert, respect reduced motion, and test both sides
 of the 997px desktop breakpoint when editing this behavior.
 

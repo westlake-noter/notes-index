@@ -8,6 +8,7 @@ import { SunIcon } from '@animateicons/react/lucide/sun-icon';
 import { MoonIcon } from '@animateicons/react/lucide/moon-icon';
 import { StarIcon } from '@animateicons/react/lucide/star-icon';
 import { GitForkIcon } from '@animateicons/react/lucide/git-fork-icon';
+import { ChevronsLeftIcon } from '@animateicons/react/lucide/chevrons-left-icon';
 
 const icons = {
   book: BookOpenIcon,
@@ -19,6 +20,7 @@ const icons = {
   moon: MoonIcon,
   star: StarIcon,
   fork: GitForkIcon,
+  expand: ChevronsLeftIcon,
 };
 
 export default function AnimatedIcon({ name, size = 20, className = '' }) {
