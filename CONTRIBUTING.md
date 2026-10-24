@@ -193,26 +193,99 @@ sync timestamp, source link, and scoped heading IDs.
 
 ### Custom Document Tabs
 
-Add local `.md` files under `content/repository-tabs/` and declare them in the
-course page's frontmatter. These files are not routes and do not appear in the
-sidebar. No React changes or GitHub requests are needed.
+Use custom tabs for locally maintained material such as a detailed course
+outline, reading guide, or exercises. Overview is the main course Markdown;
+README, Contributing, and License come from the linked upstream repository.
+Do not edit the generated snapshots to add local content.
 
-```yaml
-repositoryTabs:
-  - id: reading-guide
-    label: Reading Guide
-    file: content/repository-tabs/reading-guide.md
-  - id: exercises
-    label: Exercises
-    file: content/repository-tabs/exercises.md
-```
+All paths below are relative to this repository's root.
 
-Tabs append after the four built-in tabs, in declaration order. IDs must be
-unique lowercase identifiers (letters, numbers, hyphens) and cannot replace
-`overview`, `readme`, `contributing`, or `license`. The page must link to at
-least one GitHub repository. Invalid or missing file declarations fail the
-build with an actionable error rather than silently dropping content.
+1. Create the tab's content file, for example
+   `content/repository-tabs/new-course-exercises.md`:
 
+   ```md
+   # Exercises
+
+   ## Chapter 1
+
+   Practice problems and references for this chapter.
+
+   ## Chapter 2
+
+   Additional exercises.
+   ```
+
+2. Open the corresponding course page under `docs/notes/<subject>/`.
+   Add `repositoryTabs` inside its existing YAML frontmatter (the block between
+   the first pair of `---` lines), not in the article body. Keep the page's
+   existing title, sidebar settings, repository link, and other content.
+   A complete minimal page looks like this:
+
+   ```md
+   ---
+   title: New Course
+   description: Course notes and exercises.
+   sidebar_position: 8
+   repositoryTabs:
+     - id: exercises
+       label: Exercises
+       file: content/repository-tabs/new-course-exercises.md
+   ---
+
+   # New Course
+
+   A short course introduction.
+
+   - Repository: [Course notes](https://github.com/OWNER/REPOSITORY)
+   ```
+
+3. To add more tabs, append entries to the same `repositoryTabs` list.
+   Each entry needs an `id`, `label`, and `file`:
+
+   ```yaml
+   repositoryTabs:
+     - id: exercises
+       label: Exercises
+       file: content/repository-tabs/new-course-exercises.md
+     - id: reading-guide
+       label: Reading Guide
+       file: content/repository-tabs/new-course-reading-guide.md
+   ```
+
+   Create every referenced file before building. `id` is the URL identifier
+   (for example, `?view=exercises`); `label` is the visible English tab name;
+   `file` is the exact, case-sensitive path from the repository root, not a
+   path relative to the course page.
+
+4. Run `npm start` to preview the course page and select the new tab.
+   If the server is already running, stop and restart it after changing
+   local tab files or their declarations. Check that the content, right-hand
+   table of contents, and a refresh with `?view=exercises` all work.
+   Also check a narrow mobile viewport.
+
+5. Before submitting a pull request, run:
+
+   ```sh
+   npm test
+   npm run build
+   git diff --check
+   ```
+
+   Include both the course page configuration and its new content files in
+   the pull request. No changes to React, `sidebars.js`, or generated JSON
+   are needed; local tabs do not require `npm run sync:repositories`.
+
+Tabs append after the four built-in tabs, in declaration order. Reorder the
+list to reorder custom tabs. IDs must start with a lowercase letter, contain
+only lowercase letters, numbers, and hyphens, and be unique within the page.
+Do not use the reserved IDs `overview`, `readme`, `contributing`, or `license`.
+Keep IDs stable after publishing so existing links continue to work.
+The course page must link to at least one GitHub repository.
+
+Use `.md` files under `content/repository-tabs/`; these are tab content, not
+standalone routes or sidebar pages. Use ordinary Markdown, GFM tables, and
+KaTeX math, not MDX imports, React components, or interactive Mermaid blocks.
+HTML is sanitized and JavaScript is not executed.
 Local Markdown shares the sanitized GFM/KaTeX renderer and dynamic TOC. Its
 headings have scoped anchors, and `?view=reading-guide` survives refresh.
 Use site-root links such as `/notes/math/` and `/img/example.png`; the renderer
@@ -226,10 +299,17 @@ MDX caches invalidate when the files change. Restart `npm start` after creating
 or changing these local tab files, since their sources are loaded with the site
 configuration. `npm run build` always picks up the latest local files.
 
-The Fundamental Algebra and Analysis page is a working example: its
-`repositoryTabs` declaration adds a **TOC** tab backed by
-`content/repository-tabs/fundamental-algebra-analysis-toc.md`. Both volume
-outlines live there; its Overview contains only the course introduction.
+Working example:
+[Fundamental Algebra and Analysis](docs/notes/math/fundamental-algebra-analysis.md)
+declares a **TOC** tab backed by
+[its local outline](content/repository-tabs/fundamental-algebra-analysis-toc.md).
+Both volume outlines live there; Overview keeps the course introduction.
+
+If the build reports `Invalid repositoryTabs`, check for a reserved or
+duplicate ID, an empty label, or a missing content file. If it reports
+`repositoryTabs requires a page linking to a GitHub repository`, add a real
+repository link to the course page. If the preview still shows old content,
+restart `npm start`; changing tab sources does not hot-reload them.
 
 On a transient fetch failure, keep the saved README and its original sync time,
 marked as a cached copy. A confirmed missing README gets an explicit empty
