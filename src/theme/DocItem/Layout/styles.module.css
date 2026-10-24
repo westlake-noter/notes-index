@@ -27,6 +27,10 @@
     position: sticky;
     top: calc(var(--ifm-navbar-height) + 16px);
     max-height: calc(100dvh - var(--ifm-navbar-height) - 32px);
+    /* Keep negative link margins and focus rings inside the scroll viewport. */
+    margin: -4px -16px;
+    padding: 4px 16px;
+    overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
   }
