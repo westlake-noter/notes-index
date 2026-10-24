@@ -1,0 +1,49 @@
+.content {
+  min-width: 0;
+}
+
+.content article > :first-child {
+  margin-top: 0;
+}
+
+.aside {
+  display: none;
+}
+
+.mobileRepositories {
+  margin-top: 32px;
+}
+
+@media (min-width: 997px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px;
+    align-items: start;
+    gap: 32px;
+  }
+
+  .aside {
+    display: block;
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 16px);
+    max-height: calc(100dvh - var(--ifm-navbar-height) - 32px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .aside :global(.glass-toc) {
+    position: static;
+    max-height: 260px;
+    margin-bottom: 24px;
+  }
+
+  .mobileRepositories {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 224px;
+  }
+}

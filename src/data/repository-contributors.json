@@ -1,0 +1,141 @@
+{
+  "repositories": {
+    "jiamingshi-jsphys/chem-notes": {
+      "contributors": [
+        {
+          "id": 342396891,
+          "login": "JiamingShi-JsPhys",
+          "contributions": 4
+        }
+      ],
+      "updatedAt": "2026-10-24T05:51:55.242Z",
+      "info": {
+        "stars": 3,
+        "forks": 0
+      }
+    },
+    "qwerasdasd1/calculus-notes": {
+      "contributors": [
+        {
+          "id": 159507269,
+          "login": "qwerasdasd1",
+          "contributions": 29
+        }
+      ],
+      "updatedAt": "2026-10-24T05:51:56.517Z",
+      "info": {
+        "stars": 6,
+        "forks": 2
+      }
+    },
+    "westlake-noter/faa-lecture-notes-2025fall-2026spring": {
+      "contributors": [
+        {
+          "id": 221569880,
+          "login": "JieteXue",
+          "contributions": 51
+        },
+        {
+          "id": 229779214,
+          "login": "Liu-34763",
+          "contributions": 1
+        }
+      ],
+      "updatedAt": "2026-10-24T05:51:57.337Z",
+      "info": {
+        "stars": 2,
+        "forks": 0
+      }
+    },
+    "qwerasdasd1/linear-algebra-notes": {
+      "contributors": [
+        {
+          "id": 159507269,
+          "login": "qwerasdasd1",
+          "contributions": 14
+        }
+      ],
+      "updatedAt": "2026-10-24T05:51:58.210Z",
+      "info": {
+        "stars": 3,
+        "forks": 1
+      }
+    },
+    "westlake-noter/measure-theory-and-real-analysis": {
+      "contributors": [
+        {
+          "id": 221569880,
+          "login": "JieteXue",
+          "contributions": 2
+        },
+        {
+          "id": 291059013,
+          "login": "huajiguo27",
+          "contributions": 1
+        }
+      ],
+      "updatedAt": "2026-10-24T05:51:59.540Z",
+      "info": {
+        "stars": 0,
+        "forks": 0
+      }
+    },
+    "westlake-noter/ordinary-differential-equations": {
+      "contributors": [
+        {
+          "id": 221569880,
+          "login": "JieteXue",
+          "contributions": 2
+        },
+        {
+          "id": 291059013,
+          "login": "huajiguo27",
+          "contributions": 1
+        }
+      ],
+      "updatedAt": "2026-10-24T05:52:00.405Z",
+      "info": {
+        "stars": 0,
+        "forks": 0
+      }
+    },
+    "qwerasdasd1/pde-notes": {
+      "contributors": [
+        {
+          "id": 159507269,
+          "login": "qwerasdasd1",
+          "contributions": 3
+        }
+      ],
+      "updatedAt": "2026-10-24T05:52:01.234Z",
+      "info": {
+        "stars": 0,
+        "forks": 0
+      }
+    },
+    "westlake-noter/probability-theory": {
+      "contributors": [
+        {
+          "id": 291059013,
+          "login": "huajiguo27",
+          "contributions": 6
+        },
+        {
+          "id": 221569880,
+          "login": "JieteXue",
+          "contributions": 2
+        },
+        {
+          "id": 78999275,
+          "login": "funnyfruit27",
+          "contributions": 2
+        }
+      ],
+      "updatedAt": "2026-10-24T05:52:02.089Z",
+      "info": {
+        "stars": 0,
+        "forks": 0
+      }
+    }
+  }
+}

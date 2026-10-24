@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import AnimatedIcon from '@site/src/components/AnimatedIcon';
 import CampusMap from '@site/src/components/CampusMap';
+import RepositoryContributors from '@site/src/components/RepositoryContributors';
 import styles from './index.module.css';
 
 export default function Home() {
@@ -54,6 +55,7 @@ export default function Home() {
             </Link>
           </div>
         </section>
+        <RepositoryContributors all />
       </main>
     </Layout>
   );

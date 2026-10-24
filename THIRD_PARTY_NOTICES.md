@@ -20,7 +20,10 @@ commit `4b1052413e20e2834337fe6a24a0ef108e9ebabf`:
 - `packages/base-ui/src/layouts/glass/page/index.tsx`
 - `packages/base-ui/src/components/toc/index.tsx`
 - `packages/base-ui/src/components/toc/block.tsx`
+- `packages/base-ui/src/components/github-info.tsx`
 - `apps/docs/app/(home)/page.tsx`
+- `apps/docs/components/contributor-count.tsx`
+- `apps/docs/lib/get-contributors.ts`
 
 The original Tailwind utilities are translated to CSS selectors for the existing
 Docusaurus components. Docusaurus continues to own routing, navigation, and the
@@ -30,6 +33,16 @@ The homepage follows the upstream layered hero, inline action links, and
 constrained follow-up sections, using native Docusaurus components instead of
 Next.js. Its campus maps are user-supplied terraink.app exports, with visible
 terraink.app and OpenStreetMap attribution retained on the page.
+
+`RepositoryContributors` follows the upstream linked-avatar presentation.
+`lib/github-contributors.mjs` adapts the upstream fetcher, adding pagination,
+user deduplication, and static build-time snapshots. A remark plugin collects
+repository links from each document; the browser never receives an API token
+or makes GitHub API requests. Avatar images are loaded from GitHub's avatar CDN.
+The repository link and compact star/fork statistics adapt `GithubInfo`; data
+is fetched by the sync script rather than React Server Components. The native
+Docusaurus document components are retained in an adapted MIT-licensed
+DocItem/Layout to place this information in the right-hand rail.
 
 `src/theme/TOC/index.js` adapts the block TOC's resize-cached item positions and
 animated `clip-path`. A class observer connects it to Docusaurus's existing

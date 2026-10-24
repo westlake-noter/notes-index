@@ -6,6 +6,8 @@ import { FolderOpenIcon } from '@animateicons/react/lucide/folder-open-icon';
 import { FileTextIcon } from '@animateicons/react/lucide/file-text-icon';
 import { SunIcon } from '@animateicons/react/lucide/sun-icon';
 import { MoonIcon } from '@animateicons/react/lucide/moon-icon';
+import { StarIcon } from '@animateicons/react/lucide/star-icon';
+import { GitForkIcon } from '@animateicons/react/lucide/git-fork-icon';
 
 const icons = {
   book: BookOpenIcon,
@@ -15,6 +17,8 @@ const icons = {
   file: FileTextIcon,
   sun: SunIcon,
   moon: MoonIcon,
+  star: StarIcon,
+  fork: GitForkIcon,
 };
 
 export default function AnimatedIcon({ name, size = 20, className = '' }) {

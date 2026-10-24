@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkRepositoryContributors from './plugins/remark-repository-contributors.mjs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,7 +32,7 @@ const config = {
           breadcrumbs: true,
           editUrl: 'https://github.com/westlake-noter/notes-index/edit/main/',
           showLastUpdateTime: true,
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [remarkMath, remarkRepositoryContributors],
           rehypePlugins: [rehypeKatex],
         },
         blog: false,

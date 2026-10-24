@@ -37,6 +37,11 @@ jobs:
           key: ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-${{ runner.arch }}-node22-webpack-v1-${{ hashFiles('package-lock.json', 'docusaurus.config.js', 'sidebars.js', '.github/workflows/pages.yml') }}-
+      - run: npm test
+      - name: Sync linked repository contributors
+        run: npm run sync:contributors
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'

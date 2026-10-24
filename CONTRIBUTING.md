@@ -101,6 +101,39 @@ ordering, or choose a position consistent with neighboring pages.
 The sidebar and the existing subject directory update automatically. Do not
 add a duplicate course list to the README or subject index.
 
+## Repository Contributors
+
+GitHub repository links in Markdown automatically add repository information
+and contributors to the right-hand rail, below the table of contents when one
+exists. On mobile they appear after the article. Repository, file, and release
+links for the same repository are deduplicated. Bare URLs, reference links, and
+static MDX `<a href="...">` links work too; code examples and GitHub profile links
+do not create contributor sections.
+
+The homepage displays a deduplicated preview of contributors across the linked
+repositories. The display uses GitHub's commit-based contributor list, not a
+complete list of authors, reviewers, or people who helped outside GitHub.
+Repository links follow Fumadocs's compact GitHub Info presentation, including
+stars and forks when available. Statistics and contributor lists are snapshots,
+not live counters.
+
+Pages builds run `npm run sync:contributors` using the workflow's read-only token
+before building. Local `npm run build` and `npm start` use the saved snapshot in
+`src/data/repository-contributors.json` and do not need network access.
+To refresh it locally, run:
+
+```sh
+npm run sync:contributors
+npm test
+npm run build
+```
+
+An optional `GITHUB_TOKEN` environment variable raises the API rate limit.
+Never commit a token. Failed requests retain the previous snapshot; new
+repositories without data show a link to GitHub's contributors page instead.
+Changes on external repositories become visible after the next sync and site
+deployment; they do not update live in the visitor's browser.
+
 ## Add a Subject
 
 Create `docs/notes/<subject>/` with `_category_.json`, an `index.md`, and its
